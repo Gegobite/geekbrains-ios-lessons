@@ -13,10 +13,11 @@
 		27BE278E25238EB80066B296 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27BE278D25238EB80066B296 /* Assets.xcassets */; };
 		27BE279125238EB80066B296 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27BE278F25238EB80066B296 /* LaunchScreen.storyboard */; };
 		27BE279B252396BF0066B296 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BE279A252396BF0066B296 /* LoginViewController.swift */; };
+		27BE27A52527F4110066B296 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BE27A42527F4110066B296 /* TabViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		27BE278125238EB70066B296 /* loginViewApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loginViewApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		27BE278125238EB70066B296 /* SocialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BE278425238EB70066B296 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27BE278625238EB70066B296 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		27BE278B25238EB70066B296 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -24,6 +25,7 @@
 		27BE279025238EB80066B296 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27BE279225238EB80066B296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27BE279A252396BF0066B296 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		27BE27A42527F4110066B296 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +42,7 @@
 		27BE277825238EB70066B296 = {
 			isa = PBXGroup;
 			children = (
-				27BE278325238EB70066B296 /* loginViewApp */,
+				27BE278325238EB70066B296 /* SocialApp */,
 				27BE278225238EB70066B296 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,12 +50,12 @@
 		27BE278225238EB70066B296 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				27BE278125238EB70066B296 /* loginViewApp.app */,
+				27BE278125238EB70066B296 /* SocialApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		27BE278325238EB70066B296 /* loginViewApp */ = {
+		27BE278325238EB70066B296 /* SocialApp */ = {
 			isa = PBXGroup;
 			children = (
 				27BE279A252396BF0066B296 /* LoginViewController.swift */,
@@ -63,16 +65,17 @@
 				27BE278D25238EB80066B296 /* Assets.xcassets */,
 				27BE278F25238EB80066B296 /* LaunchScreen.storyboard */,
 				27BE279225238EB80066B296 /* Info.plist */,
+				27BE27A42527F4110066B296 /* TabViewController.swift */,
 			);
-			path = loginViewApp;
+			path = SocialApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		27BE278025238EB70066B296 /* loginViewApp */ = {
+		27BE278025238EB70066B296 /* SocialApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 27BE279525238EB80066B296 /* Build configuration list for PBXNativeTarget "loginViewApp" */;
+			buildConfigurationList = 27BE279525238EB80066B296 /* Build configuration list for PBXNativeTarget "SocialApp" */;
 			buildPhases = (
 				27BE277D25238EB70066B296 /* Sources */,
 				27BE277E25238EB70066B296 /* Frameworks */,
@@ -82,9 +85,9 @@
 			);
 			dependencies = (
 			);
-			name = loginViewApp;
+			name = SocialApp;
 			productName = loginViewApp;
-			productReference = 27BE278125238EB70066B296 /* loginViewApp.app */;
+			productReference = 27BE278125238EB70066B296 /* SocialApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -101,7 +104,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 27BE277C25238EB70066B296 /* Build configuration list for PBXProject "loginViewApp" */;
+			buildConfigurationList = 27BE277C25238EB70066B296 /* Build configuration list for PBXProject "SocialApp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -114,7 +117,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				27BE278025238EB70066B296 /* loginViewApp */,
+				27BE278025238EB70066B296 /* SocialApp */,
 			);
 		};
 /* End PBXProject section */
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27BE27A52527F4110066B296 /* TabViewController.swift in Sources */,
 				27BE279B252396BF0066B296 /* LoginViewController.swift in Sources */,
 				27BE278525238EB70066B296 /* AppDelegate.swift in Sources */,
 				27BE278725238EB70066B296 /* SceneDelegate.swift in Sources */,
@@ -287,12 +291,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = loginViewApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SocialApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = gegobite.loginViewApp;
+				PRODUCT_BUNDLE_IDENTIFIER = gegobite.SocialApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -305,12 +309,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = loginViewApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SocialApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = gegobite.loginViewApp;
+				PRODUCT_BUNDLE_IDENTIFIER = gegobite.SocialApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -320,7 +324,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		27BE277C25238EB70066B296 /* Build configuration list for PBXProject "loginViewApp" */ = {
+		27BE277C25238EB70066B296 /* Build configuration list for PBXProject "SocialApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				27BE279325238EB80066B296 /* Debug */,
@@ -329,7 +333,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		27BE279525238EB80066B296 /* Build configuration list for PBXNativeTarget "loginViewApp" */ = {
+		27BE279525238EB80066B296 /* Build configuration list for PBXNativeTarget "SocialApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				27BE279625238EB80066B296 /* Debug */,

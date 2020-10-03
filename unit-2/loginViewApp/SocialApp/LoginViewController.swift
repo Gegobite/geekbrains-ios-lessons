@@ -17,10 +17,13 @@ class LoginViewController: UIViewController {
         let password = passwordTextField.text!
         
         if (login == "admin" && password == "admin"){
-            showMessage("Simple Auth App", "Auth OK")
+            let contoller = UIStoryboard(name: "Main", bundle: nil)
+                .instantiateViewController(identifier: "TabViewController") as! TabViewController
+            contoller.modalPresentationStyle = .fullScreen
+            present(contoller, animated: true, completion: nil)
         }
         else{
-            showMessage("Simple Auth App", "Wrong Login or Password")
+            showMessage("Social App", "Wrong Login or Password")
         }
     }
     
