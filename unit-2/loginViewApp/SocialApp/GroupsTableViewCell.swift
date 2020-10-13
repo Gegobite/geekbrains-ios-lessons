@@ -10,7 +10,7 @@ import UIKit
 class GroupsTableViewCell: UITableViewCell {
 
     
-    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var avatarView: AvatarView!
     @IBOutlet weak var nameLabel: UILabel!
     
     

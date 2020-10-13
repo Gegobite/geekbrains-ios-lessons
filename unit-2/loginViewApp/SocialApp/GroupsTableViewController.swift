@@ -45,7 +45,7 @@ class GroupsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupsViewCell") as! GroupsTableViewCell
 
         let selectedGroup = dataSource[indexPath.row]
-        cell.avatarImageView.image = selectedGroup.getAvatarImage()
+        cell.avatarView!.image = selectedGroup.getAvatarImage()
         cell.nameLabel.text = selectedGroup.name
 
         return cell

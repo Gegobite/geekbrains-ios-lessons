@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27B6C45B253634B100DE9A71 /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6C45A253634B100DE9A71 /* CircularImageView.swift */; };
+		27B6C45E2536377C00DE9A71 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6C45D2536377C00DE9A71 /* AvatarView.swift */; };
+		27B6C46225364BD400DE9A71 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6C46125364BD400DE9A71 /* LikeButton.swift */; };
+		27B6C46725364D3900DE9A71 /* BezierExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6C46625364D3900DE9A71 /* BezierExtensions.swift */; };
+		27B6C46A25365B4E00DE9A71 /* LikeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6C46925365B4E00DE9A71 /* LikeControl.swift */; };
 		27BE278525238EB70066B296 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BE278425238EB70066B296 /* AppDelegate.swift */; };
 		27BE278725238EB70066B296 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BE278625238EB70066B296 /* SceneDelegate.swift */; };
 		27BE278C25238EB70066B296 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27BE278A25238EB70066B296 /* Main.storyboard */; };
@@ -26,6 +31,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27B6C45A253634B100DE9A71 /* CircularImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
+		27B6C45D2536377C00DE9A71 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		27B6C46125364BD400DE9A71 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
+		27B6C46625364D3900DE9A71 /* BezierExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierExtensions.swift; sourceTree = "<group>"; };
+		27B6C46925365B4E00DE9A71 /* LikeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeControl.swift; sourceTree = "<group>"; };
 		27BE278125238EB70066B296 /* SocialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BE278425238EB70066B296 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27BE278625238EB70066B296 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +67,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27B6C4592536348700DE9A71 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				27B6C45A253634B100DE9A71 /* CircularImageView.swift */,
+				27B6C45D2536377C00DE9A71 /* AvatarView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		27B6C46025364BB600DE9A71 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				27B6C46125364BD400DE9A71 /* LikeButton.swift */,
+				27B6C46925365B4E00DE9A71 /* LikeControl.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		27B6C46525364CFC00DE9A71 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				27B6C46625364D3900DE9A71 /* BezierExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		27B6C46C25365F0400DE9A71 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		27BE277825238EB70066B296 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +119,10 @@
 		27BE278325238EB70066B296 /* SocialApp */ = {
 			isa = PBXGroup;
 			children = (
+				27B6C46C25365F0400DE9A71 /* Animations */,
+				27B6C46525364CFC00DE9A71 /* Extensions */,
+				27B6C46025364BB600DE9A71 /* Controls */,
+				27B6C4592536348700DE9A71 /* Views */,
 				27BE27B1252D2D7C0066B296 /* Services */,
 				27BE27AD252D2C2F0066B296 /* Models */,
 				27BE279A252396BF0066B296 /* LoginViewController.swift */,
@@ -192,10 +239,15 @@
 				27BE278525238EB70066B296 /* AppDelegate.swift in Sources */,
 				27BE27CC25310E1E0066B296 /* GroupsTableViewCell.swift in Sources */,
 				27BE27AF252D2C690066B296 /* User.swift in Sources */,
+				27B6C45B253634B100DE9A71 /* CircularImageView.swift in Sources */,
 				27BE27C32530FEC60066B296 /* FriendImagesCollectionViewCell.swift in Sources */,
 				27BE27BA2530F5700066B296 /* FriendsTableViewController.swift in Sources */,
+				27B6C46225364BD400DE9A71 /* LikeButton.swift in Sources */,
 				27BE27C02530FE470066B296 /* FriendImagesCollectionViewController.swift in Sources */,
+				27B6C45E2536377C00DE9A71 /* AvatarView.swift in Sources */,
 				27BE278725238EB70066B296 /* SceneDelegate.swift in Sources */,
+				27B6C46A25365B4E00DE9A71 /* LikeControl.swift in Sources */,
+				27B6C46725364D3900DE9A71 /* BezierExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

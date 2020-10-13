@@ -41,7 +41,7 @@ class FriendsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendsTableViewCell") as! FriendsTableViewCell
 
         let selectedUser = dataSource[indexPath.row]
-        cell.avatarImageView.image = UserService.getUserAvatarImage(selectedUser)
+        cell.avatarView.image = UserService.getUserAvatarImage(selectedUser)
         cell.userNameLabel.text = "\(selectedUser.firstName) \(selectedUser.secondName)"
 
         return cell

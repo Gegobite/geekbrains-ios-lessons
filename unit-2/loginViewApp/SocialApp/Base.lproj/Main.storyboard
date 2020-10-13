@@ -126,36 +126,37 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendsTableViewCell" id="iDz-97-1yq" customClass="FriendsTableViewCell" customModule="SocialApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="72.333335876464844"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iDz-97-1yq" id="Ey0-yy-xAi">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="72.333335876464844"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sjs-w1-QAt" userLabel="AvatarImage">
-                                            <rect key="frame" x="20" y="11.000000000000004" width="50" height="50.333333333333343"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="1gU-iM-uaE"/>
-                                                <constraint firstAttribute="width" constant="50" id="z7H-9H-Udk"/>
-                                            </constraints>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ec6-Wh-T5V" userLabel="UserName">
-                                            <rect key="frame" x="86" y="25.666666666666671" width="42" height="21"/>
+                                            <rect key="frame" x="82" y="11.333333333333336" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXw-br-vbv" customClass="AvatarView" customModule="SocialApp" customModuleProvider="target">
+                                            <rect key="frame" x="16" y="8" width="50" height="50"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="91z-kN-rdb"/>
+                                                <constraint firstAttribute="width" constant="50" id="ZUv-uR-oua"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="sjs-w1-QAt" firstAttribute="top" secondItem="Ey0-yy-xAi" secondAttribute="topMargin" id="1wH-g0-7mO"/>
+                                        <constraint firstAttribute="bottom" secondItem="sXw-br-vbv" secondAttribute="bottom" constant="8" id="Dlz-iJ-jF3"/>
                                         <constraint firstItem="ec6-Wh-T5V" firstAttribute="centerY" secondItem="Ey0-yy-xAi" secondAttribute="centerY" id="HYA-Ly-8dt"/>
-                                        <constraint firstItem="ec6-Wh-T5V" firstAttribute="leading" secondItem="sjs-w1-QAt" secondAttribute="trailing" constant="16" id="QVg-7n-Ap2"/>
-                                        <constraint firstItem="sjs-w1-QAt" firstAttribute="leading" secondItem="Ey0-yy-xAi" secondAttribute="leadingMargin" id="wFY-EA-n0c"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="sjs-w1-QAt" secondAttribute="bottom" id="xAS-BY-rSU"/>
+                                        <constraint firstItem="ec6-Wh-T5V" firstAttribute="leading" secondItem="sXw-br-vbv" secondAttribute="trailing" constant="16" id="QWe-7w-mil"/>
+                                        <constraint firstItem="sXw-br-vbv" firstAttribute="top" secondItem="Ey0-yy-xAi" secondAttribute="top" constant="8" id="RRs-IE-Jx4"/>
+                                        <constraint firstItem="sXw-br-vbv" firstAttribute="leading" secondItem="Ey0-yy-xAi" secondAttribute="leading" constant="16" id="et8-gc-hId"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="avatarImageView" destination="sjs-w1-QAt" id="Jh8-XY-JtL"/>
+                                    <outlet property="avatarView" destination="sXw-br-vbv" id="fMg-sD-3e7"/>
                                     <outlet property="userNameLabel" destination="ec6-Wh-T5V" id="RIu-1e-Ny3"/>
                                     <segue destination="reR-3K-exe" kind="show" id="GXi-hq-hzS"/>
                                 </connections>
@@ -188,30 +189,49 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="friendImagesCell" id="ebe-GH-l3n" customClass="FriendImagesCollectionViewCell" customModule="SocialApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ygm-y7-eda">
-                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z1g-7q-JvZ">
-                                            <rect key="frame" x="4" y="4" width="142" height="142"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="vZa-Zx-T6L">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z1g-7q-JvZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="150"/>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZ1-mt-J01" customClass="LikeControl" customModule="SocialApp" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="150" width="200" height="50"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="FzG-bS-1CT"/>
+                                                        <constraint firstAttribute="width" constant="50" id="O0X-5E-9t8"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="150" id="MLT-uV-MEY"/>
-                                                <constraint firstAttribute="width" constant="150" id="WcT-QE-ON5"/>
+                                                <constraint firstItem="RZ1-mt-J01" firstAttribute="top" secondItem="z1g-7q-JvZ" secondAttribute="bottom" constant="2" id="AG7-rp-VPR"/>
+                                                <constraint firstAttribute="trailing" secondItem="z1g-7q-JvZ" secondAttribute="trailing" id="T2u-Qx-jb8"/>
+                                                <constraint firstItem="RZ1-mt-J01" firstAttribute="leading" secondItem="vZa-Zx-T6L" secondAttribute="leading" constant="100" id="Uar-Hk-AlV"/>
+                                                <constraint firstAttribute="width" constant="200" id="Whl-oJ-uTj"/>
+                                                <constraint firstAttribute="height" constant="200" id="kvc-EP-aAz"/>
+                                                <constraint firstItem="z1g-7q-JvZ" firstAttribute="leading" secondItem="vZa-Zx-T6L" secondAttribute="leading" id="l9d-lh-wB0"/>
+                                                <constraint firstAttribute="bottom" secondItem="RZ1-mt-J01" secondAttribute="bottom" id="yJc-YK-dyo"/>
+                                                <constraint firstItem="z1g-7q-JvZ" firstAttribute="top" secondItem="vZa-Zx-T6L" secondAttribute="top" id="z9t-p9-b5u"/>
                                             </constraints>
-                                        </imageView>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="z1g-7q-JvZ" secondAttribute="bottom" constant="4" id="Lre-48-Tf6"/>
-                                        <constraint firstItem="z1g-7q-JvZ" firstAttribute="leading" secondItem="ygm-y7-eda" secondAttribute="leading" constant="4" id="br7-bn-WrO"/>
-                                        <constraint firstItem="z1g-7q-JvZ" firstAttribute="top" secondItem="ygm-y7-eda" secondAttribute="top" constant="4" id="q2Z-mt-JqN"/>
-                                        <constraint firstAttribute="trailing" secondItem="z1g-7q-JvZ" secondAttribute="trailing" constant="4" id="xZq-rC-Xiz"/>
+                                        <constraint firstAttribute="bottom" secondItem="vZa-Zx-T6L" secondAttribute="bottom" id="VhS-sI-7o0"/>
+                                        <constraint firstItem="vZa-Zx-T6L" firstAttribute="top" secondItem="ygm-y7-eda" secondAttribute="top" id="cFh-lM-YfT"/>
+                                        <constraint firstAttribute="trailing" secondItem="vZa-Zx-T6L" secondAttribute="trailing" id="vGa-8X-R4K"/>
+                                        <constraint firstItem="vZa-Zx-T6L" firstAttribute="leading" secondItem="ygm-y7-eda" secondAttribute="leading" id="zFv-O3-PKx"/>
                                     </constraints>
                                 </collectionViewCellContentView>
-                                <size key="customSize" width="150" height="150"/>
                                 <connections>
                                     <outlet property="imageView" destination="z1g-7q-JvZ" id="4jz-c4-Zqm"/>
+                                    <outlet property="likeControl" destination="RZ1-mt-J01" id="q5f-Qi-8I1"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -261,30 +281,36 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="66.333335876464844"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cri-Fl-q7D" userLabel="AvatarImage">
-                                            <rect key="frame" x="16" y="8.0000000000000036" width="50" height="50.333333333333343"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="IUZ-fk-A7d"/>
-                                                <constraint firstAttribute="width" constant="50" id="sUv-HD-RSa"/>
-                                            </constraints>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wab-pk-64D" userLabel="Name">
                                             <rect key="frame" x="82" y="22.666666666666671" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QJS-NK-hNs" customClass="AvatarView" customModule="SocialApp" customModuleProvider="target">
+                                            <rect key="frame" x="16" y="8.0000000000000036" width="50" height="50.333333333333343"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="1ZJ-ad-DW4"/>
+                                                <constraint firstAttribute="width" constant="50" id="nUR-Mf-O8e"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                    <real key="value" value="11"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="wab-pk-64D" firstAttribute="leading" secondItem="Cri-Fl-q7D" secondAttribute="trailing" constant="16" id="6W5-SS-K1H"/>
-                                        <constraint firstItem="Cri-Fl-q7D" firstAttribute="leading" secondItem="ilH-Jo-1Yj" secondAttribute="leading" constant="16" id="K3j-Qg-EgZ"/>
+                                        <constraint firstAttribute="bottom" secondItem="QJS-NK-hNs" secondAttribute="bottom" constant="8" id="BV3-o7-92F"/>
+                                        <constraint firstItem="QJS-NK-hNs" firstAttribute="top" secondItem="ilH-Jo-1Yj" secondAttribute="top" constant="8" id="Sld-F2-ajW"/>
                                         <constraint firstItem="wab-pk-64D" firstAttribute="centerY" secondItem="ilH-Jo-1Yj" secondAttribute="centerY" id="Ugk-df-IzN"/>
-                                        <constraint firstItem="Cri-Fl-q7D" firstAttribute="top" secondItem="ilH-Jo-1Yj" secondAttribute="top" constant="8" id="drT-Wd-AQF"/>
-                                        <constraint firstAttribute="bottom" secondItem="Cri-Fl-q7D" secondAttribute="bottom" constant="8" id="yUh-3a-tf0"/>
+                                        <constraint firstItem="QJS-NK-hNs" firstAttribute="leading" secondItem="ilH-Jo-1Yj" secondAttribute="leading" constant="16" id="aaa-kA-f4f"/>
+                                        <constraint firstItem="wab-pk-64D" firstAttribute="leading" secondItem="QJS-NK-hNs" secondAttribute="trailing" constant="16" id="v81-ce-PkU"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="avatarImageView" destination="Cri-Fl-q7D" id="l7b-3r-DZv"/>
+                                    <outlet property="avatarView" destination="QJS-NK-hNs" id="GN7-5p-pNS"/>
                                     <outlet property="nameLabel" destination="wab-pk-64D" id="nft-yB-ljm"/>
                                 </connections>
                             </tableViewCell>
