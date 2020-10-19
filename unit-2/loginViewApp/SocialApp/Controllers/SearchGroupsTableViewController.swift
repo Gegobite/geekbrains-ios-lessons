@@ -1,56 +1,23 @@
 //
-//  GroupsTableViewController.swift
+//  SearchGroupsTableViewController.swift
 //  SocialApp
 //
-//  Created by Игорь Ершов on 10.10.2020.
+//  Created by Игорь Ершов on 19.10.2020.
 //
 
 import UIKit
 
-class GroupsTableViewController: UITableViewController {
+class SearchGroupsTableViewController: BaseTableViewController {
 
-    var dataSource: [Group] = [
-        Group(name: "My group 1", avatarImage: "Group1"),
-        Group(name: "My group 2", avatarImage: "Group2"),
-        Group(name: "My group 3", avatarImage: "Group3"),
-        Group(name: "My group 4", avatarImage: "Group4")]
+    override var dataSource: [DataObject] {
+        return DataContext.instance.groups
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        dataSource = UserService.getUsers()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        tableView.delegate = self
-        tableView.dataSource = self
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return dataSource.count
-    }
-
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "groupsViewCell") as! GroupsTableViewCell
-
-        let selectedGroup = dataSource[indexPath.row]
-        cell.avatarView!.image = selectedGroup.getAvatarImage()
-        cell.nameLabel.text = selectedGroup.name
-
-        return cell
-    }
-    
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -70,16 +37,17 @@ class GroupsTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            
-            dataSource.remove(at: indexPath.row)
+            // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
-        }
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }    
     }
-    
+    */
 
     /*
     // Override to support rearranging the table view.

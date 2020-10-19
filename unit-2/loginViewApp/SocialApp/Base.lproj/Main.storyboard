@@ -124,44 +124,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendsTableViewCell" id="iDz-97-1yq" customClass="FriendsTableViewCell" customModule="SocialApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iDz-97-1yq" id="Ey0-yy-xAi">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ec6-Wh-T5V" userLabel="UserName">
-                                            <rect key="frame" x="82" y="11.333333333333336" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXw-br-vbv" customClass="AvatarView" customModule="SocialApp" customModuleProvider="target">
-                                            <rect key="frame" x="16" y="8" width="50" height="50"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="91z-kN-rdb"/>
-                                                <constraint firstAttribute="width" constant="50" id="ZUv-uR-oua"/>
-                                            </constraints>
-                                        </view>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="sXw-br-vbv" secondAttribute="bottom" constant="8" id="Dlz-iJ-jF3"/>
-                                        <constraint firstItem="ec6-Wh-T5V" firstAttribute="centerY" secondItem="Ey0-yy-xAi" secondAttribute="centerY" id="HYA-Ly-8dt"/>
-                                        <constraint firstItem="ec6-Wh-T5V" firstAttribute="leading" secondItem="sXw-br-vbv" secondAttribute="trailing" constant="16" id="QWe-7w-mil"/>
-                                        <constraint firstItem="sXw-br-vbv" firstAttribute="top" secondItem="Ey0-yy-xAi" secondAttribute="top" constant="8" id="RRs-IE-Jx4"/>
-                                        <constraint firstItem="sXw-br-vbv" firstAttribute="leading" secondItem="Ey0-yy-xAi" secondAttribute="leading" constant="16" id="et8-gc-hId"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="avatarView" destination="sXw-br-vbv" id="fMg-sD-3e7"/>
-                                    <outlet property="userNameLabel" destination="ec6-Wh-T5V" id="RIu-1e-Ny3"/>
-                                    <segue destination="reR-3K-exe" kind="show" id="GXi-hq-hzS"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="xIk-u6-rmr" id="mGG-gb-wuE"/>
                             <outlet property="delegate" destination="xIk-u6-rmr" id="TRk-iQ-20I"/>
@@ -176,7 +138,7 @@
         <!--Photos-->
         <scene sceneID="eTv-Rv-gIX">
             <objects>
-                <collectionViewController id="reR-3K-exe" customClass="FriendImagesCollectionViewController" customModule="SocialApp" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="FriendImagesCollectionViewController" id="reR-3K-exe" customClass="FriendImagesCollectionViewController" customModule="SocialApp" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="8RI-yh-F53">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -273,48 +235,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupsViewCell" id="ReE-9S-nJD" customClass="GroupsTableViewCell" customModule="SocialApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="66.333335876464844"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ReE-9S-nJD" id="ilH-Jo-1Yj">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="66.333335876464844"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wab-pk-64D" userLabel="Name">
-                                            <rect key="frame" x="82" y="22.666666666666671" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QJS-NK-hNs" customClass="AvatarView" customModule="SocialApp" customModuleProvider="target">
-                                            <rect key="frame" x="16" y="8.0000000000000036" width="50" height="50.333333333333343"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="1ZJ-ad-DW4"/>
-                                                <constraint firstAttribute="width" constant="50" id="nUR-Mf-O8e"/>
-                                            </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                    <real key="value" value="11"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </view>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="QJS-NK-hNs" secondAttribute="bottom" constant="8" id="BV3-o7-92F"/>
-                                        <constraint firstItem="QJS-NK-hNs" firstAttribute="top" secondItem="ilH-Jo-1Yj" secondAttribute="top" constant="8" id="Sld-F2-ajW"/>
-                                        <constraint firstItem="wab-pk-64D" firstAttribute="centerY" secondItem="ilH-Jo-1Yj" secondAttribute="centerY" id="Ugk-df-IzN"/>
-                                        <constraint firstItem="QJS-NK-hNs" firstAttribute="leading" secondItem="ilH-Jo-1Yj" secondAttribute="leading" constant="16" id="aaa-kA-f4f"/>
-                                        <constraint firstItem="wab-pk-64D" firstAttribute="leading" secondItem="QJS-NK-hNs" secondAttribute="trailing" constant="16" id="v81-ce-PkU"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="avatarView" destination="QJS-NK-hNs" id="GN7-5p-pNS"/>
-                                    <outlet property="nameLabel" destination="wab-pk-64D" id="nft-yB-ljm"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="9mQ-Nd-aFE" id="qMm-mj-lzj"/>
                             <outlet property="delegate" destination="9mQ-Nd-aFE" id="qE1-FA-cxA"/>
@@ -332,24 +252,14 @@
             </objects>
             <point key="canvasLocation" x="-194" y="1029"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Search Groups Table View Controller-->
         <scene sceneID="hRP-2l-AQ8">
             <objects>
-                <tableViewController id="b0S-dt-s6f" sceneMemberID="viewController">
+                <tableViewController id="b0S-dt-s6f" customClass="SearchGroupsTableViewController" customModule="SocialApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FMy-TJ-wp5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="nfQ-lg-48F">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nfQ-lg-48F" id="ceM-gA-EJZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="b0S-dt-s6f" id="6ah-JO-p2y"/>
                             <outlet property="delegate" destination="b0S-dt-s6f" id="CNy-91-gpg"/>

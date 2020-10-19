@@ -16,7 +16,11 @@ class LoginViewController: UIViewController {
         let login = loginTextField.text!
         let password = passwordTextField.text!
         
-        if (login == "admin" && password == "admin"){
+        let user = DataContext.instance.getUserByLogin(login: login)
+        
+        if (user?.password == password){
+            DataContext.instance.setCurrentUser(user: user!)
+            
             let contoller = UIStoryboard(name: "Main", bundle: nil)
                 .instantiateViewController(identifier: "TabViewController") as! TabViewController
             contoller.modalPresentationStyle = .fullScreen

@@ -28,8 +28,9 @@ class FriendImagesCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
     
-    func setImages(_ images: [UIImage]) {
-        self.images = images
+    func setDataObject(_ dataObject: DataObject) {
+        self.images = dataObject.getImages()
+        self.title = dataObject.name
     }
 
     /*

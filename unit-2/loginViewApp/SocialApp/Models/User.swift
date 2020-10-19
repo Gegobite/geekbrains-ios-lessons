@@ -5,16 +5,24 @@
 //  Created by Игорь Ершов on 07.10.2020.
 //
 
-class User{
-    let firstName: String
-    let secondName: String
-    let avatarImage: String
-    let images: [String]
+class User : DataObject {
+    var login: String
+    var password: String
+    var name: String
+    var mainImage: String
+    var images: [String]?
+    var friends: [Friend]?
+    var groups: [Group]?
     
-    init(firstName: String, secondName: String, avatarImage: String, images: [String]) {
-        self.firstName = firstName
-        self.secondName = secondName
-        self.avatarImage = avatarImage
+    init(login: String, password: String, name: String,
+         mainImage: String, images: [String]? = nil,
+         friends: [Friend]? = nil, groups: [Group]? = nil) {
+        self.login = login
+        self.password = password
+        self.name = name
+        self.mainImage = mainImage
         self.images = images
+        self.friends = friends
+        self.groups = groups
     }
 }

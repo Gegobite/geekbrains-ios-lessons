@@ -7,18 +7,14 @@
 
 import UIKit
 
-class Group{
-    let name: String
-    let avatarImage: String
+class Group : DataObject {
+    var name: String
+    var mainImage: String
+    var images: [String]?
     
-    init(name: String, avatarImage: String) {
+    init(name: String, mainImage: String, images: [String]? = nil) {
         self.name = name
-        self.avatarImage = avatarImage
-    }
-}
-
-extension Group{
-    func getAvatarImage() -> UIImage?{
-        return UIImage(named: avatarImage) ?? nil
+        self.mainImage = mainImage
+        self.images = images
     }
 }
