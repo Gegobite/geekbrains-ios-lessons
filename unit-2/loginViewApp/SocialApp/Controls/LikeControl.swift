@@ -26,7 +26,7 @@ import UIKit
 
   private func setupView() {
     likeButton.isUserInteractionEnabled = false
-    likesLabel.text = "\(likesCount)"
+    likesLabel.text = likesCount > 0 ? "\(likesCount)" : ""
     likesLabel.textColor = UIColor.darkGray
     setupConstraints()
     

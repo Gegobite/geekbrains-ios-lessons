@@ -143,57 +143,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3Ln-Lh-UW7">
-                            <size key="itemSize" width="152" height="165"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
+                        <collectionViewLayout key="collectionViewLayout" id="NcL-6H-aJw" customClass="GalleryLayout" customModule="SocialApp" customModuleProvider="target"/>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="friendImagesCell" id="ebe-GH-l3n" customClass="FriendImagesCollectionViewCell" customModule="SocialApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="friendImagesCell" id="ebe-GH-l3n" customClass="FriendImagesCollectionViewCell" customModule="SocialApp" customModuleProvider="target">
+                                <rect key="frame" x="88.666666666666671" y="0.0" width="237" height="284"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ygm-y7-eda">
-                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="237" height="284"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="vZa-Zx-T6L">
-                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z1g-7q-JvZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="150"/>
-                                                </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZ1-mt-J01" customClass="LikeControl" customModule="SocialApp" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="150" width="200" height="50"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="FzG-bS-1CT"/>
-                                                        <constraint firstAttribute="width" constant="50" id="O0X-5E-9t8"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z1g-7q-JvZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="237" height="284"/>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crh-zG-HEN" customClass="LikeControl" customModule="SocialApp" customModuleProvider="target">
+                                            <rect key="frame" x="5" y="254" width="50" height="30"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="RZ1-mt-J01" firstAttribute="top" secondItem="z1g-7q-JvZ" secondAttribute="bottom" constant="2" id="AG7-rp-VPR"/>
-                                                <constraint firstAttribute="trailing" secondItem="z1g-7q-JvZ" secondAttribute="trailing" id="T2u-Qx-jb8"/>
-                                                <constraint firstItem="RZ1-mt-J01" firstAttribute="leading" secondItem="vZa-Zx-T6L" secondAttribute="leading" constant="100" id="Uar-Hk-AlV"/>
-                                                <constraint firstAttribute="width" constant="200" id="Whl-oJ-uTj"/>
-                                                <constraint firstAttribute="height" constant="200" id="kvc-EP-aAz"/>
-                                                <constraint firstItem="z1g-7q-JvZ" firstAttribute="leading" secondItem="vZa-Zx-T6L" secondAttribute="leading" id="l9d-lh-wB0"/>
-                                                <constraint firstAttribute="bottom" secondItem="RZ1-mt-J01" secondAttribute="bottom" id="yJc-YK-dyo"/>
-                                                <constraint firstItem="z1g-7q-JvZ" firstAttribute="top" secondItem="vZa-Zx-T6L" secondAttribute="top" id="z9t-p9-b5u"/>
+                                                <constraint firstAttribute="height" constant="30" id="mwu-EB-eNK"/>
+                                                <constraint firstAttribute="width" constant="50" id="s8w-1F-xOB"/>
                                             </constraints>
-                                        </stackView>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="vZa-Zx-T6L" secondAttribute="bottom" id="VhS-sI-7o0"/>
-                                        <constraint firstItem="vZa-Zx-T6L" firstAttribute="top" secondItem="ygm-y7-eda" secondAttribute="top" id="cFh-lM-YfT"/>
-                                        <constraint firstAttribute="trailing" secondItem="vZa-Zx-T6L" secondAttribute="trailing" id="vGa-8X-R4K"/>
-                                        <constraint firstItem="vZa-Zx-T6L" firstAttribute="leading" secondItem="ygm-y7-eda" secondAttribute="leading" id="zFv-O3-PKx"/>
+                                        <constraint firstAttribute="bottom" secondItem="crh-zG-HEN" secondAttribute="bottom" id="23D-JT-pgF"/>
+                                        <constraint firstAttribute="trailing" secondItem="z1g-7q-JvZ" secondAttribute="trailing" id="Ikc-pm-m2d"/>
+                                        <constraint firstItem="crh-zG-HEN" firstAttribute="top" secondItem="z1g-7q-JvZ" secondAttribute="bottom" constant="-30" id="U3h-qf-eSw"/>
+                                        <constraint firstItem="crh-zG-HEN" firstAttribute="leading" secondItem="ygm-y7-eda" secondAttribute="leading" constant="5" id="Vuk-qN-fBY"/>
+                                        <constraint firstItem="z1g-7q-JvZ" firstAttribute="leading" secondItem="ygm-y7-eda" secondAttribute="leading" id="gfc-zW-x9A"/>
+                                        <constraint firstItem="z1g-7q-JvZ" firstAttribute="top" secondItem="ygm-y7-eda" secondAttribute="top" id="s6Q-LC-blM"/>
                                     </constraints>
                                 </collectionViewCellContentView>
+                                <size key="customSize" width="237" height="284"/>
                                 <connections>
                                     <outlet property="imageView" destination="z1g-7q-JvZ" id="4jz-c4-Zqm"/>
-                                    <outlet property="likeControl" destination="RZ1-mt-J01" id="q5f-Qi-8I1"/>
+                                    <outlet property="likeControl" destination="crh-zG-HEN" id="0na-09-6vd"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -250,7 +233,36 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VLR-82-xgU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-194" y="1029"/>
+            <point key="canvasLocation" x="714" y="1035"/>
+        </scene>
+        <!--News-->
+        <scene sceneID="d5d-Cm-ahQ">
+            <objects>
+                <tableViewController title="News" id="2jn-pk-cUB" customClass="NewsTableViewController" customModule="SocialApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="HaZ-yo-2ST">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="kTs-Pg-ESL" customClass="NewsTableViewCell" customModule="SocialApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kTs-Pg-ESL" id="6AM-Sb-0bn">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2jn-pk-cUB" id="SL6-z7-Omg"/>
+                            <outlet property="delegate" destination="2jn-pk-cUB" id="c6Y-LT-6Me"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="News" id="h1j-m6-yNu"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mv4-ha-atb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-194" y="1773"/>
         </scene>
         <!--Search Groups Table View Controller-->
         <scene sceneID="hRP-2l-AQ8">
@@ -269,7 +281,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1KL-iK-1mO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="661" y="1029"/>
+            <point key="canvasLocation" x="1570" y="1035"/>
         </scene>
         <!--Groups-->
         <scene sceneID="EZI-wM-t8u">
@@ -288,7 +300,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sqF-nN-koe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1104" y="1029"/>
+            <point key="canvasLocation" x="-194" y="1035"/>
         </scene>
         <!--Tab View Controller-->
         <scene sceneID="3IC-Yt-h93">
@@ -303,16 +315,37 @@
                     <connections>
                         <segue destination="aAJ-ZG-1tn" kind="relationship" relationship="viewControllers" id="BnP-Vn-73s"/>
                         <segue destination="zaL-tg-T8D" kind="relationship" relationship="viewControllers" id="Wzc-JL-WqX"/>
+                        <segue destination="HMS-Ww-Qfa" kind="relationship" relationship="viewControllers" id="kLh-pG-PtW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bkR-Tb-0a6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1104" y="222"/>
         </scene>
+        <!--News-->
+        <scene sceneID="G8G-qo-RBR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HMS-Ww-Qfa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="News" image="newspaper" catalog="system" id="Agl-tu-7ca"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kl4-Pu-cEt">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2jn-pk-cUB" kind="relationship" relationship="rootViewController" id="wpF-Bt-IJx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UUS-QK-Ye8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1104" y="1773"/>
+        </scene>
     </scenes>
     <resources>
         <image name="1030.OrangeInk-375w-812h_iphone" width="904" height="1976"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="newspaper" catalog="system" width="128" height="108"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">

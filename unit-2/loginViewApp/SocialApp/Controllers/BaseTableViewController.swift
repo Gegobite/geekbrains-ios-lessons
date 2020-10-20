@@ -7,14 +7,17 @@
 
 import UIKit
 
-class BaseTableViewController: UITableViewController {
+class BaseTableViewController: UITableViewController, UISearchBarDelegate {
 
     var dataSource: [DataObject] { return [] }
     
-    var dataSourceIndex: [String] {
+    private var filteredData: [DataObject]!
+    private var searchBarWrapperView: UIView!
+    private var searchBar: UISearchBar!
+    private var dataSourceIndex: [String] {
             get {
                 var index: [String] = []
-                for item in dataSource {
+                for item in filteredData {
                     index.append(String(item.name.first!))
                 }
                 return Array(Set(index)).sorted()
@@ -24,7 +27,17 @@ class BaseTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        filteredData = dataSource
+        
         tableView.register(UINib(nibName: "CommonTableViewCell", bundle: nil), forCellReuseIdentifier: "CommonCell")
+        
+        searchBarWrapperView = UIView(frame: CGRect(x: 0, y: 25, width: tableView.frame.width, height: 54))
+        searchBar = UISearchBar()
+        searchBar.delegate = self
+        searchBar.sizeToFit()
+        searchBarWrapperView.addSubview(searchBar)
+
+        tableView.tableHeaderView = searchBarWrapperView
     }
 
     // MARK: - Table view data source
@@ -64,7 +77,15 @@ class BaseTableViewController: UITableViewController {
     }
     
     func getItemsInSection(section: Int) -> [DataObject]{
-        return dataSource.filter {String($0.name.first!) == dataSourceIndex[section]}
+        return filteredData.filter {String($0.name.first!) == dataSourceIndex[section]}
     }
 
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredData = searchText.isEmpty ? dataSource :
+            dataSource.filter { (item: DataObject) -> Bool in
+                return item.name.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+            }
+                
+        tableView.reloadData()
+    }
 }

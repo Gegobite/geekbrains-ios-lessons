@@ -5,7 +5,7 @@
 //  Created by Игорь Ершов on 19.10.2020.
 //
 
-import Foundation
+import UIKit
 
 class DataContext {
     
@@ -15,11 +15,13 @@ class DataContext {
     var friends: [Friend] = []
     var groups: [Group] = []
     var currentUser: User?
+    var news: [News] = []
     
     init() {
         loadGroups()
         loadFriends()
         createTestUser()
+        loadNews()
     }
     
     func getUserByLogin(login: String) -> User?{
@@ -33,7 +35,7 @@ class DataContext {
     private func loadFriends(){
         friends = [
             Friend(name: "Ivan Ivanov",
-                 mainImage: "AvatarIvanov", images: ["Ivanov1", "Ivanov2"]),
+                 mainImage: "AvatarIvanov", images: ["Ivanov1", "Ivanov2", "ImageBackground"]),
             
             Friend(name: "Pupka Pupkin",
                  mainImage: "AvatarPupkin", images: ["Pupkin1", "Pupkin2"])
@@ -56,5 +58,14 @@ class DataContext {
                  friends: friends,
                  groups: groups.filter({!$0.name.contains("4")}))
         )
+    }
+    
+    private func loadNews(){
+        news = [
+            News(friend: friends[0], createDate: Date(),
+                text: "Lorem ipsum", image: nil),
+            News(friend: friends[1], createDate: Date(),
+                text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", image: UIImage(named: "Group1"))
+        ]
     }
 }
