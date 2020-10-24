@@ -34,14 +34,35 @@ import UIKit
         }
     }
     
+    lazy var tapGestureRecognizer: UITapGestureRecognizer = {
+        let recognizer = UITapGestureRecognizer(target: self,
+                                                action: #selector(onTap))
+        recognizer.numberOfTapsRequired = 1    // Количество нажатий, необходимое для распознавания
+        recognizer.numberOfTouchesRequired = 1 // Количество пальцев, которые должны коснуться экрана для распознавания
+        return recognizer
+    }()
+    
+    @objc func onTap() {
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0,
+                       options: [],
+                       animations: {
+                        self.imageView!.frame.size.height -= 10
+                       })
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         updateImageView()
+        addGestureRecognizer(tapGestureRecognizer)
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         updateImageView()
+        addGestureRecognizer(tapGestureRecognizer)
     }
     
     private func updateImageView(){
