@@ -28,6 +28,8 @@
 		27B6C4B1254344D200DE9A71 /* LaunchScreenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27B6C4B0254344D200DE9A71 /* LaunchScreenView.xib */; };
 		27B6C4B92544450E00DE9A71 /* DotsAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6C4B82544450E00DE9A71 /* DotsAnimation.swift */; };
 		27B6C4BC2544478E00DE9A71 /* LaunchScreenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6C4BB2544478E00DE9A71 /* LaunchScreenManager.swift */; };
+		27B6C4BF2544870400DE9A71 /* ImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6C4BE2544870400DE9A71 /* ImageViewExtensions.swift */; };
+		27B6C4C22544881400DE9A71 /* FriendImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6C4C12544881400DE9A71 /* FriendImagesViewController.swift */; };
 		27BE278525238EB70066B296 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BE278425238EB70066B296 /* AppDelegate.swift */; };
 		27BE278725238EB70066B296 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BE278625238EB70066B296 /* SceneDelegate.swift */; };
 		27BE278C25238EB70066B296 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27BE278A25238EB70066B296 /* Main.storyboard */; };
@@ -64,6 +66,8 @@
 		27B6C4B0254344D200DE9A71 /* LaunchScreenView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreenView.xib; sourceTree = "<group>"; };
 		27B6C4B82544450E00DE9A71 /* DotsAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotsAnimation.swift; sourceTree = "<group>"; };
 		27B6C4BB2544478E00DE9A71 /* LaunchScreenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenManager.swift; sourceTree = "<group>"; };
+		27B6C4BE2544870400DE9A71 /* ImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtensions.swift; sourceTree = "<group>"; };
+		27B6C4C12544881400DE9A71 /* FriendImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendImagesViewController.swift; sourceTree = "<group>"; };
 		27BE278125238EB70066B296 /* SocialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BE278425238EB70066B296 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27BE278625238EB70066B296 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				27B6C46625364D3900DE9A71 /* BezierExtensions.swift */,
+				27B6C4BE2544870400DE9A71 /* ImageViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -137,6 +142,7 @@
 				27B6C481253E301D00DE9A71 /* BaseTableViewController.swift */,
 				27B6C485253E34C300DE9A71 /* SearchGroupsTableViewController.swift */,
 				27B6C493253E555D00DE9A71 /* NewsTableViewController.swift */,
+				27B6C4C12544881400DE9A71 /* FriendImagesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -281,8 +287,10 @@
 				27B6C4BC2544478E00DE9A71 /* LaunchScreenManager.swift in Sources */,
 				27BE27A52527F4110066B296 /* TabViewController.swift in Sources */,
 				27B6C4B92544450E00DE9A71 /* DotsAnimation.swift in Sources */,
+				27B6C4BF2544870400DE9A71 /* ImageViewExtensions.swift in Sources */,
 				27BE279B252396BF0066B296 /* LoginViewController.swift in Sources */,
 				27B6C49D25433D6D00DE9A71 /* DotsControll.swift in Sources */,
+				27B6C4C22544881400DE9A71 /* FriendImagesViewController.swift in Sources */,
 				27B6C474253E1CB200DE9A71 /* DataObject.swift in Sources */,
 				27BE27C925310C380066B296 /* GroupsTableViewController.swift in Sources */,
 				27B6C497253F6CD500DE9A71 /* GalleryLayout.swift in Sources */,

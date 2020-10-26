@@ -191,6 +191,21 @@
             </objects>
             <point key="canvasLocation" x="1569.5652173913045" y="221.65178571428569"/>
         </scene>
+        <!--Friend Images View Controller-->
+        <scene sceneID="ba7-He-AjV">
+            <objects>
+                <viewController storyboardIdentifier="FriendImagesViewController" modalPresentationStyle="fullScreen" id="7M0-R8-vVV" customClass="FriendImagesViewController" customModule="SocialApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jit-zl-R3R">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="XFN-1c-NNw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kNz-W8-IwS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2412" y="218"/>
+        </scene>
         <!--Friends-->
         <scene sceneID="Wjb-07-L45">
             <objects>
