@@ -209,7 +209,7 @@
         <!--Friends-->
         <scene sceneID="Wjb-07-L45">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aAJ-ZG-1tn" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aAJ-ZG-1tn" customClass="FriendsNavigationViewController" customModule="SocialApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Friends" image="person.fill" catalog="system" id="VRY-kZ-wk7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kof-3P-0Fp">
