@@ -11,6 +11,7 @@
 		274FFD1B254CA32700389C65 /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FFD1A254CA32700389C65 /* PopAnimator.swift */; };
 		274FFD1E254CA46900389C65 /* FriendsNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FFD1D254CA46900389C65 /* FriendsNavigationViewController.swift */; };
 		274FFD22254CB32E00389C65 /* CustomInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FFD21254CB32E00389C65 /* CustomInteractiveTransition.swift */; };
+		27AF7B80256814DA00E463DF /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7B7F256814DA00E463DF /* SessionManager.swift */; };
 		27B6C45B253634B100DE9A71 /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6C45A253634B100DE9A71 /* CircularImageView.swift */; };
 		27B6C45E2536377C00DE9A71 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6C45D2536377C00DE9A71 /* AvatarView.swift */; };
 		27B6C46225364BD400DE9A71 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6C46125364BD400DE9A71 /* LikeButton.swift */; };
@@ -53,6 +54,7 @@
 		274FFD1A254CA32700389C65 /* PopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
 		274FFD1D254CA46900389C65 /* FriendsNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsNavigationViewController.swift; sourceTree = "<group>"; };
 		274FFD21254CB32E00389C65 /* CustomInteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInteractiveTransition.swift; sourceTree = "<group>"; };
+		27AF7B7F256814DA00E463DF /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		27B6C45A253634B100DE9A71 /* CircularImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
 		27B6C45D2536377C00DE9A71 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		27B6C46125364BD400DE9A71 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				27B6C496253F6CD500DE9A71 /* GalleryLayout.swift */,
 				27B6C4B0254344D200DE9A71 /* LaunchScreenView.xib */,
 				27B6C4BB2544478E00DE9A71 /* LaunchScreenManager.swift */,
+				27AF7B7F256814DA00E463DF /* SessionManager.swift */,
 			);
 			path = SocialApp;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				27B6C474253E1CB200DE9A71 /* DataObject.swift in Sources */,
 				27BE27C925310C380066B296 /* GroupsTableViewController.swift in Sources */,
 				274FFD22254CB32E00389C65 /* CustomInteractiveTransition.swift in Sources */,
+				27AF7B80256814DA00E463DF /* SessionManager.swift in Sources */,
 				27B6C497253F6CD500DE9A71 /* GalleryLayout.swift in Sources */,
 				27B6C48C253E49C600DE9A71 /* News.swift in Sources */,
 				27B6C477253E1F6A00DE9A71 /* DataContext.swift in Sources */,
