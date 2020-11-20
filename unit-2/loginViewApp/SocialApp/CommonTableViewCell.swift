@@ -1,18 +1,16 @@
 //
-//  GroupsTableViewCell.swift
+//  CommonTableViewCell.swift
 //  SocialApp
 //
-//  Created by Игорь Ершов on 10.10.2020.
+//  Created by Игорь Ершов on 19.10.2020.
 //
 
 import UIKit
 
-class GroupsTableViewCell: UITableViewCell {
+class CommonTableViewCell: UITableViewCell {
 
-    
     @IBOutlet weak var avatarView: AvatarView!
     @IBOutlet weak var nameLabel: UILabel!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,5 +22,5 @@ class GroupsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

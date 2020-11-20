@@ -1,31 +1,21 @@
 //
-//  GroupsTableViewController.swift
+//  NewsTableViewController.swift
 //  SocialApp
 //
-//  Created by Игорь Ершов on 10.10.2020.
+//  Created by Игорь Ершов on 20.10.2020.
 //
 
 import UIKit
 
-class GroupsTableViewController: UITableViewController {
+class NewsTableViewController: UITableViewController {
 
-    var dataSource: [Group] = [
-        Group(name: "My group 1", avatarImage: "Group1"),
-        Group(name: "My group 2", avatarImage: "Group2"),
-        Group(name: "My group 3", avatarImage: "Group3"),
-        Group(name: "My group 4", avatarImage: "Group4")]
+    var dataSource: [News] = DataContext.instance.news
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        dataSource = UserService.getUsers()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        tableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        tableView.delegate = self
-        tableView.dataSource = self
     }
 
     // MARK: - Table view data source
@@ -42,25 +32,13 @@ class GroupsTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "groupsViewCell") as! GroupsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsTableViewCell
 
-        let selectedGroup = dataSource[indexPath.row]
-        cell.avatarImageView.image = selectedGroup.getAvatarImage()
-        cell.nameLabel.text = selectedGroup.name
+        cell.setNews(dataSource[indexPath.row])
 
         return cell
     }
     
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -70,16 +48,17 @@ class GroupsTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            
-            dataSource.remove(at: indexPath.row)
+            // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
-        }
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }    
     }
-    
+    */
 
     /*
     // Override to support rearranging the table view.
