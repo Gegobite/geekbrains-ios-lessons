@@ -16,11 +16,18 @@ class LoginViewController: UIViewController {
         let login = loginTextField.text!
         let password = passwordTextField.text!
         
-        if (login == "admin" && password == "admin"){
-            showMessage("Simple Auth App", "Auth OK")
+        let user = DataContext.instance.getUserByLogin(login: login)
+        
+        if (user?.password == password){
+            DataContext.instance.setCurrentUser(user: user!)
+            
+            let contoller = UIStoryboard(name: "Main", bundle: nil)
+                .instantiateViewController(identifier: "TabViewController") as! TabViewController
+            contoller.modalPresentationStyle = .fullScreen
+            present(contoller, animated: true, completion: nil)
         }
         else{
-            showMessage("Simple Auth App", "Wrong Login or Password")
+            showMessage("Social App", "Wrong Login or Password")
         }
     }
     
