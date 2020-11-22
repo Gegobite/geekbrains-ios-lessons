@@ -9,11 +9,17 @@ import UIKit
 
 class FriendsTableViewController: BaseTableViewController {
 
+    let friendsService = AppDelegate.container.resolve(FriendsServiceDelegate.self)!
+    let photosService = AppDelegate.container.resolve(PhotosServiceDelegate.self)!
+    
     override var dataSource: [DataObject] {
         return DataContext.instance.currentUser!.friends ?? []
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let friends = friendsService.getUserFriends(userId: AppSessionManager.currentSession.userId)
+        print(friends)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -22,7 +28,9 @@ class FriendsTableViewController: BaseTableViewController {
         
         let items = getItemsInSection(section: indexPath.section)
         
-        guard let item: DataObject = items[indexPath.row] else { return }
+        guard let item = items[indexPath.row] as DataObject? else { return }
+        let photos = photosService.getUserPhotos(userId: item.id)
+        print(photos)
         
         vc.setDataObject(item)
     }

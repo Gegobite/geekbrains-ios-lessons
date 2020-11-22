@@ -5,8 +5,8 @@
 //  Created by Игорь Ершов on 20.11.2020.
 //
 
-class SessionManager {
-    static var currentSession: SessionManager = SessionManager()
+class AppSessionManager {
+    static var currentSession: AppSessionManager = AppSessionManager()
     
     var token: String
     var userId: Int

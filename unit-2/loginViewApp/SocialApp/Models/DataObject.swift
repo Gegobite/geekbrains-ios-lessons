@@ -8,6 +8,7 @@
 import UIKit
 
 protocol DataObject {
+    var id: Int { get set }
     var name: String { get set }
     var mainImage: String { get set }
     var images: [String]? { get set }
