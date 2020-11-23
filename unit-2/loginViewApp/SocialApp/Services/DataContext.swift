@@ -58,6 +58,8 @@ class DataContext {
                  friends: friends,
                  groups: groups.filter({!$0.name.contains("4")}))
         )
+        
+        setCurrentUser(user: users[0])
     }
     
     private func loadNews(){

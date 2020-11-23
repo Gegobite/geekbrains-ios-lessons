@@ -6,6 +6,7 @@
 //
 
 class User : DataObject {
+    var id: Int
     var login: String
     var password: String
     var name: String
@@ -17,6 +18,7 @@ class User : DataObject {
     init(login: String, password: String, name: String,
          mainImage: String, images: [String]? = nil,
          friends: [Friend]? = nil, groups: [Group]? = nil) {
+        self.id = 1
         self.login = login
         self.password = password
         self.name = name
