@@ -8,7 +8,7 @@
 import Alamofire
 
 protocol FriendsServiceDelegate {
-    func getUserFriends(userId: Int) -> String
+    func getUserFriends(userId: Int, completion: @escaping (String) -> Void)
 }
 
 class FriendsService : FriendsServiceDelegate {
@@ -18,7 +18,7 @@ class FriendsService : FriendsServiceDelegate {
         self.client = client
     }
     
-    func getUserFriends(userId: Int) -> String {
+    func getUserFriends(userId: Int, completion: @escaping (String) -> Void) {
         let params: Parameters = [
             "user_id": userId,
             "fields": "photo_50",
@@ -26,6 +26,8 @@ class FriendsService : FriendsServiceDelegate {
             "v": ConnectionSettings.current.apiVersion
         ]
 
-        return client.getFromJson(path: "friends.get", params: params)
+        client.getFromJson(path: "friends.get", params: params) { json in
+            completion(json)
+        }
     }
 }

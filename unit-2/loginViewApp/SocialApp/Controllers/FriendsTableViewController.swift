@@ -18,8 +18,9 @@ class FriendsTableViewController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let friends = friendsService.getUserFriends(userId: AppSessionManager.currentSession.userId)
-        print(friends)
+        friendsService.getUserFriends(userId: AppSessionManager.currentSession.userId){ json in
+            print(json)
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -29,8 +30,9 @@ class FriendsTableViewController: BaseTableViewController {
         let items = getItemsInSection(section: indexPath.section)
         
         guard let item = items[indexPath.row] as DataObject? else { return }
-        let photos = photosService.getUserPhotos(userId: item.id)
-        print(photos)
+        photosService.getUserPhotos(userId: item.id){ json in
+            print(json)
+        }
         
         vc.setDataObject(item)
     }

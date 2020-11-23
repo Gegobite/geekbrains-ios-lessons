@@ -8,8 +8,8 @@
 import Alamofire
 
 protocol GroupsServiceDelegate {
-    func getUserGroups(userId: Int) -> String
-    func searchGroups(by substring: String) -> String
+    func getUserGroups(userId: Int, completion: @escaping (String) -> Void)
+    func searchGroups(by substring: String, completion: @escaping (String) -> Void)
 }
 
 class GroupsService : GroupsServiceDelegate {
@@ -20,7 +20,7 @@ class GroupsService : GroupsServiceDelegate {
         self.client = client
     }
     
-    func getUserGroups(userId: Int) -> String {
+    func getUserGroups(userId: Int, completion: @escaping (String) -> Void) {
         let params: Parameters = [
             "user_id": userId,
             "extended": 1,
@@ -28,17 +28,21 @@ class GroupsService : GroupsServiceDelegate {
             "v": ConnectionSettings.current.apiVersion
         ]
 
-        return client.getFromJson(path: "groups.get", params: params)
+        client.getFromJson(path: "groups.get", params: params){ json in
+            completion(json)
+        }
     }
     
-    func searchGroups(by substring: String) -> String {
+    func searchGroups(by substring: String, completion: @escaping (String) -> Void) {
         let params: Parameters = [
             "q": substring,
             "access_token": AppSessionManager.currentSession.token,
             "v": ConnectionSettings.current.apiVersion
         ]
 
-        return client.getFromJson(path: "groups.search", params: params)
+        return client.getFromJson(path: "groups.search", params: params) { json in
+            completion(json)
+        }
     }
     
     

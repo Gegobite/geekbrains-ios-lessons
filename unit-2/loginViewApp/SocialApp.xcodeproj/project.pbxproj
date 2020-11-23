@@ -19,6 +19,7 @@
 		27AF7B962568337200E463DF /* ConnectionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7B952568337200E463DF /* ConnectionSettings.swift */; };
 		27AF7BA1256AB69800E463DF /* GroupsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7BA0256AB69800E463DF /* GroupsService.swift */; };
 		27AF7BA4256AB98000E463DF /* PhotosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7BA3256AB98000E463DF /* PhotosService.swift */; };
+		27AF7BAD256C465D00E463DF /* CustomSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7BAC256C465D00E463DF /* CustomSession.swift */; };
 		27B6C45B253634B100DE9A71 /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6C45A253634B100DE9A71 /* CircularImageView.swift */; };
 		27B6C45E2536377C00DE9A71 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6C45D2536377C00DE9A71 /* AvatarView.swift */; };
 		27B6C46225364BD400DE9A71 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6C46125364BD400DE9A71 /* LikeButton.swift */; };
@@ -69,6 +70,7 @@
 		27AF7B952568337200E463DF /* ConnectionSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionSettings.swift; sourceTree = "<group>"; };
 		27AF7BA0256AB69800E463DF /* GroupsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsService.swift; sourceTree = "<group>"; };
 		27AF7BA3256AB98000E463DF /* PhotosService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosService.swift; sourceTree = "<group>"; };
+		27AF7BAC256C465D00E463DF /* CustomSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSession.swift; sourceTree = "<group>"; };
 		27B6C45A253634B100DE9A71 /* CircularImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
 		27B6C45D2536377C00DE9A71 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		27B6C46125364BD400DE9A71 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				27AF7B912568320800E463DF /* Services */,
 				27AF7B832568190A00E463DF /* HttpClient.swift */,
 				27AF7B952568337200E463DF /* ConnectionSettings.swift */,
+				27AF7BAC256C465D00E463DF /* CustomSession.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				27B6C4B92544450E00DE9A71 /* DotsAnimation.swift in Sources */,
 				27B6C4BF2544870400DE9A71 /* ImageViewExtensions.swift in Sources */,
 				27BE279B252396BF0066B296 /* LoginViewController.swift in Sources */,
+				27AF7BAD256C465D00E463DF /* CustomSession.swift in Sources */,
 				274FFD16254CA19E00389C65 /* PushAnimator.swift in Sources */,
 				27B6C49D25433D6D00DE9A71 /* DotsControll.swift in Sources */,
 				27B6C4C22544881400DE9A71 /* FriendImagesViewController.swift in Sources */,

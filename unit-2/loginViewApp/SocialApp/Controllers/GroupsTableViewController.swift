@@ -17,7 +17,8 @@ class GroupsTableViewController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let groups = groupsService.getUserGroups(userId: AppSessionManager.currentSession.userId)
-        print(groups)
+        groupsService.getUserGroups(userId: AppSessionManager.currentSession.userId){ json in
+            print(json)
+        }
     }
 }

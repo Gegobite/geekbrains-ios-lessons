@@ -36,23 +36,21 @@ class HttpClient {
         return jsonResponse
     }
     
-    func postFromJson(path: String, params: Parameters) -> String {
-        return sendCommonJsonRequest(path: path, method: .post, params: params)
+    func postFromJson(path: String, params: Parameters, completion: @escaping (String) -> Void) {
+        return sendCommonJsonRequest(path: path, method: .post, params: params, completion: completion)
     }
     
-    func getFromJson(path: String, params: Parameters) -> String {
-        return sendCommonJsonRequest(path: path, method: .get, params: params)
+    func getFromJson(path: String, params: Parameters, completion: @escaping (String) -> Void) {
+        sendCommonJsonRequest(path: path, method: .get, params: params, completion: completion)
     }
     
-    private func sendCommonJsonRequest(path: String, method: HTTPMethod, params: Parameters) -> String {
+    private func sendCommonJsonRequest(path: String, method: HTTPMethod, params: Parameters, completion: @escaping (String) -> Void) {
         let urlString = baseUrl + path
-        
-        var jsonResponse : String = ""
-        AF.request(urlString, method: method, parameters: params).responseJSON {
+    
+        Session.custom.request(urlString, method: method, parameters: params).responseJSON {
             (response) in
-            jsonResponse = String(describing: response.value)
+            let jsonResponse = String(describing: response.value)
+            completion(jsonResponse)
         }
-        
-        return jsonResponse
     }
 }

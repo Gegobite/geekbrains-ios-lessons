@@ -8,7 +8,7 @@
 import Alamofire
 
 protocol PhotosServiceDelegate {
-    func getUserPhotos(userId: Int) -> String
+    func getUserPhotos(userId: Int, completion: @escaping (String) -> Void)
 }
 
 class PhotosService : PhotosServiceDelegate {
@@ -19,7 +19,7 @@ class PhotosService : PhotosServiceDelegate {
         self.client = client
     }
     
-    func getUserPhotos(userId: Int) -> String {
+    func getUserPhotos(userId: Int, completion: @escaping (String) -> Void) {
         let params: Parameters = [
             "owner_id": userId,
             "extended": 1,
@@ -29,6 +29,8 @@ class PhotosService : PhotosServiceDelegate {
             "v": ConnectionSettings.current.apiVersion
         ]
 
-        return client.getFromJson(path: "photos.getAll", params: params)
+        return client.getFromJson(path: "photos.getAll", params: params){ json in
+            completion(json)
+        }
     }
 }
