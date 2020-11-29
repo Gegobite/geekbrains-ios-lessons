@@ -9,7 +9,7 @@ import UIKit
 
 class BaseTableViewController: UITableViewController, UISearchBarDelegate {
 
-    var dataSource: [DataObject] { return [] }
+    var dataSource: [DataObject] = []
     
     private var filteredData: [DataObject]!
     private var searchBarWrapperView: UIView!
@@ -38,6 +38,12 @@ class BaseTableViewController: UITableViewController, UISearchBarDelegate {
         searchBarWrapperView.addSubview(searchBar)
 
         tableView.tableHeaderView = searchBarWrapperView
+    }
+    
+    func refreshData(data: [DataObject]){
+        dataSource = data
+        filteredData = dataSource
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source

@@ -9,6 +9,7 @@ import Alamofire
 
 protocol FriendsServiceDelegate {
     func getUserFriends(userId: Int, completion: @escaping (String) -> Void)
+    func getByUserIdAsync(userId: Int, completion: @escaping ([FriendDto]?) -> Void)
 }
 
 class FriendsService : FriendsServiceDelegate {
@@ -27,7 +28,22 @@ class FriendsService : FriendsServiceDelegate {
         ]
 
         client.getFromJson(path: "friends.get", params: params) { json in
-            completion(json)
+            completion("json")
+        }
+    }
+    
+    func getByUserIdAsync(userId: Int, completion: @escaping ([FriendDto]?) -> Void) {
+        let params: Parameters = [
+            "user_id": userId,
+            "fields": "photo_50",
+            "count": 10,
+            "access_token": AppSessionManager.currentSession.token,
+            "v": ConnectionSettings.current.apiVersion
+        ]
+        
+        client.getFromJson((ResponseObject<FriendDto>).self, path: "friends.get", params: params) { data in
+            
+            completion(data?.response?.items ?? nil)
         }
     }
 }

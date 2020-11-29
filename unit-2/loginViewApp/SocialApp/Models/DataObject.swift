@@ -17,7 +17,12 @@ protocol DataObject {
 extension DataObject {
     
     func getMainImage() -> UIImage?{
-        return UIImage(named: mainImage) ?? nil
+        let url = NSURL(string: mainImage)! as URL
+        if let imageData: NSData = NSData(contentsOf: url) {
+            return UIImage(data: imageData as Data)
+        }
+
+        return nil
     }
     
     func getImages() -> [UIImage] {

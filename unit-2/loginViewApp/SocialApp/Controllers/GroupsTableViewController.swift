@@ -11,14 +11,17 @@ class GroupsTableViewController: BaseTableViewController {
     
     let groupsService = AppDelegate.container.resolve(GroupsServiceDelegate.self)!
     
-    override var dataSource: [DataObject] {
-        return DataContext.instance.currentUser!.groups ?? []
-    }
+//    override var dataSource: [DataObject] {
+//        return DataContext.instance.currentUser!.groups ?? []
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        groupsService.getUserGroups(userId: AppSessionManager.currentSession.userId){ json in
-            print(json)
+        groupsService.getGroupsByUserIdAsync(userId: AppSessionManager.currentSession.userId){ [weak self] groups in
+            guard let self = self, let groups = groups else { return }
+            DispatchQueue.main.async {
+                self.refreshData(data: groups)
+            }
         }
     }
 }

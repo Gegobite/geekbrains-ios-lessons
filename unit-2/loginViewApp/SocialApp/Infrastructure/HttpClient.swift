@@ -36,21 +36,35 @@ class HttpClient {
         return jsonResponse
     }
     
-    func postFromJson(path: String, params: Parameters, completion: @escaping (String) -> Void) {
+    func postFromJson(path: String, params: Parameters, completion: @escaping (Data) -> Void) {
         return sendCommonJsonRequest(path: path, method: .post, params: params, completion: completion)
     }
     
-    func getFromJson(path: String, params: Parameters, completion: @escaping (String) -> Void) {
+    func getFromJson(path: String, params: Parameters, completion: @escaping (Data) -> Void) {
         sendCommonJsonRequest(path: path, method: .get, params: params, completion: completion)
     }
     
-    private func sendCommonJsonRequest(path: String, method: HTTPMethod, params: Parameters, completion: @escaping (String) -> Void) {
+    func getFromJson<TEntity: Decodable>(_ dump: TEntity.Type, path: String, params: Parameters, completion: @escaping (TEntity?) -> Void) {
+        sendCommonJsonRequest(path: path, method: .get, params: params) { data in
+            do{
+                let str = String(decoding: data, as: UTF8.self)
+                let entity = try JSONDecoder().decode(TEntity.self, from: data)
+                completion(entity)
+            }
+            catch{
+                print(error)
+                completion(nil)
+            }
+        }
+    }
+    
+    private func sendCommonJsonRequest(path: String, method: HTTPMethod, params: Parameters, completion: @escaping (Data) -> Void) {
         let urlString = baseUrl + path
     
-        Session.custom.request(urlString, method: method, parameters: params).responseJSON {
+        Session.custom.request(urlString, method: method, parameters: params).responseData {
             (response) in
-            let jsonResponse = String(describing: response.value)
-            completion(jsonResponse)
+            guard let data = response.value else {return}
+            completion(data)
         }
     }
 }

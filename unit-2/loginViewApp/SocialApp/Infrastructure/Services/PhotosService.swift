@@ -9,6 +9,7 @@ import Alamofire
 
 protocol PhotosServiceDelegate {
     func getUserPhotos(userId: Int, completion: @escaping (String) -> Void)
+    func getByUserIdAsync(userId: Int, completion: @escaping ([PhotoDto]?) -> Void)
 }
 
 class PhotosService : PhotosServiceDelegate {
@@ -30,7 +31,23 @@ class PhotosService : PhotosServiceDelegate {
         ]
 
         return client.getFromJson(path: "photos.getAll", params: params){ json in
-            completion(json)
+            completion("json")
+        }
+    }
+    
+    func getByUserIdAsync(userId: Int, completion: @escaping ([PhotoDto]?) -> Void) {
+        let params: Parameters = [
+            "owner_id": userId,
+            "extended": 1,
+            "count": 5,
+            "photo_sizes": 1,
+            "skip_hidden": 1,
+            "access_token": AppSessionManager.currentSession.token,
+            "v": ConnectionSettings.current.apiVersion
+        ]
+        
+        client.getFromJson(ResponseObject<PhotoDto>.self, path: "photos.getAll", params: params){ data in
+            completion(data?.response?.items ?? nil)
         }
     }
 }

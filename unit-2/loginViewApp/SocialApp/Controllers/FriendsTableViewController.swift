@@ -10,16 +10,14 @@ import UIKit
 class FriendsTableViewController: BaseTableViewController {
 
     let friendsService = AppDelegate.container.resolve(FriendsServiceDelegate.self)!
-    let photosService = AppDelegate.container.resolve(PhotosServiceDelegate.self)!
     
-    override var dataSource: [DataObject] {
-        return DataContext.instance.currentUser!.friends ?? []
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        friendsService.getUserFriends(userId: AppSessionManager.currentSession.userId){ json in
-            print(json)
+        friendsService.getByUserIdAsync(userId: AppSessionManager.currentSession.userId){ [weak self] friends in
+            guard let self = self, let friends = friends else { return }
+            DispatchQueue.main.async {
+                self.refreshData(data: friends)
+            }
         }
     }
     
@@ -30,9 +28,6 @@ class FriendsTableViewController: BaseTableViewController {
         let items = getItemsInSection(section: indexPath.section)
         
         guard let item = items[indexPath.row] as DataObject? else { return }
-        photosService.getUserPhotos(userId: item.id){ json in
-            print(json)
-        }
         
         vc.setDataObject(item)
     }

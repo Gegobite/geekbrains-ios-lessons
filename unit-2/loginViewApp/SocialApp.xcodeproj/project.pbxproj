@@ -20,6 +20,11 @@
 		27AF7BA1256AB69800E463DF /* GroupsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7BA0256AB69800E463DF /* GroupsService.swift */; };
 		27AF7BA4256AB98000E463DF /* PhotosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7BA3256AB98000E463DF /* PhotosService.swift */; };
 		27AF7BAD256C465D00E463DF /* CustomSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7BAC256C465D00E463DF /* CustomSession.swift */; };
+		27AF7BB02573D5AC00E463DF /* FriendDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7BAF2573D5AC00E463DF /* FriendDto.swift */; };
+		27AF7BB32573D99100E463DF /* ResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7BB22573D99100E463DF /* ResponseObject.swift */; };
+		27AF7BB62573DA4200E463DF /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7BB52573DA4200E463DF /* Response.swift */; };
+		27AF7BB92573F70200E463DF /* GroupDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7BB82573F70200E463DF /* GroupDto.swift */; };
+		27AF7BBC2573FDF900E463DF /* PhotoDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7BBB2573FDF900E463DF /* PhotoDto.swift */; };
 		27B6C45B253634B100DE9A71 /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6C45A253634B100DE9A71 /* CircularImageView.swift */; };
 		27B6C45E2536377C00DE9A71 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6C45D2536377C00DE9A71 /* AvatarView.swift */; };
 		27B6C46225364BD400DE9A71 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6C46125364BD400DE9A71 /* LikeButton.swift */; };
@@ -71,6 +76,11 @@
 		27AF7BA0256AB69800E463DF /* GroupsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsService.swift; sourceTree = "<group>"; };
 		27AF7BA3256AB98000E463DF /* PhotosService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosService.swift; sourceTree = "<group>"; };
 		27AF7BAC256C465D00E463DF /* CustomSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSession.swift; sourceTree = "<group>"; };
+		27AF7BAF2573D5AC00E463DF /* FriendDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDto.swift; sourceTree = "<group>"; };
+		27AF7BB22573D99100E463DF /* ResponseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseObject.swift; sourceTree = "<group>"; };
+		27AF7BB52573DA4200E463DF /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		27AF7BB82573F70200E463DF /* GroupDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDto.swift; sourceTree = "<group>"; };
+		27AF7BBB2573FDF900E463DF /* PhotoDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDto.swift; sourceTree = "<group>"; };
 		27B6C45A253634B100DE9A71 /* CircularImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
 		27B6C45D2536377C00DE9A71 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		27B6C46125364BD400DE9A71 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
@@ -273,6 +283,11 @@
 				27B6C473253E1CB200DE9A71 /* DataObject.swift */,
 				27B6C47B253E28A200DE9A71 /* Friend.swift */,
 				27B6C48B253E49C600DE9A71 /* News.swift */,
+				27AF7BAF2573D5AC00E463DF /* FriendDto.swift */,
+				27AF7BB22573D99100E463DF /* ResponseObject.swift */,
+				27AF7BB52573DA4200E463DF /* Response.swift */,
+				27AF7BB82573F70200E463DF /* GroupDto.swift */,
+				27AF7BBB2573FDF900E463DF /* PhotoDto.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -414,6 +429,7 @@
 				27B6C482253E301D00DE9A71 /* BaseTableViewController.swift in Sources */,
 				27B6C4BC2544478E00DE9A71 /* LaunchScreenManager.swift in Sources */,
 				27BE27A52527F4110066B296 /* TabViewController.swift in Sources */,
+				27AF7BB62573DA4200E463DF /* Response.swift in Sources */,
 				27B6C4B92544450E00DE9A71 /* DotsAnimation.swift in Sources */,
 				27B6C4BF2544870400DE9A71 /* ImageViewExtensions.swift in Sources */,
 				27BE279B252396BF0066B296 /* LoginViewController.swift in Sources */,
@@ -428,9 +444,11 @@
 				27AF7B80256814DA00E463DF /* AppSessionManager.swift in Sources */,
 				27B6C497253F6CD500DE9A71 /* GalleryLayout.swift in Sources */,
 				27B6C48C253E49C600DE9A71 /* News.swift in Sources */,
+				27AF7BB92573F70200E463DF /* GroupDto.swift in Sources */,
 				27B6C477253E1F6A00DE9A71 /* DataContext.swift in Sources */,
 				27B6C490253E4AD700DE9A71 /* NewsTableViewCell.swift in Sources */,
 				27BE278525238EB70066B296 /* AppDelegate.swift in Sources */,
+				27AF7BBC2573FDF900E463DF /* PhotoDto.swift in Sources */,
 				27BE27AF252D2C690066B296 /* User.swift in Sources */,
 				27B6C45B253634B100DE9A71 /* CircularImageView.swift in Sources */,
 				27BE27C32530FEC60066B296 /* FriendImagesCollectionViewCell.swift in Sources */,
@@ -439,6 +457,7 @@
 				274FFD1B254CA32700389C65 /* PopAnimator.swift in Sources */,
 				274FFD1E254CA46900389C65 /* FriendsNavigationViewController.swift in Sources */,
 				27BE27C02530FE470066B296 /* FriendImagesCollectionViewController.swift in Sources */,
+				27AF7BB02573D5AC00E463DF /* FriendDto.swift in Sources */,
 				27B6C470253E190900DE9A71 /* CommonTableViewCell.swift in Sources */,
 				27AF7B962568337200E463DF /* ConnectionSettings.swift in Sources */,
 				27B6C45E2536377C00DE9A71 /* AvatarView.swift in Sources */,
@@ -449,6 +468,7 @@
 				27BE278725238EB70066B296 /* SceneDelegate.swift in Sources */,
 				27B6C494253E555D00DE9A71 /* NewsTableViewController.swift in Sources */,
 				27B6C46A25365B4E00DE9A71 /* LikeControl.swift in Sources */,
+				27AF7BB32573D99100E463DF /* ResponseObject.swift in Sources */,
 				27B6C46725364D3900DE9A71 /* BezierExtensions.swift in Sources */,
 				27B6C47C253E28A200DE9A71 /* Friend.swift in Sources */,
 				27AF7B932568323E00E463DF /* FriendsService.swift in Sources */,

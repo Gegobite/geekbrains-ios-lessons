@@ -9,12 +9,13 @@ import UIKit
 
 class SearchGroupsTableViewController: BaseTableViewController {
 
-    override var dataSource: [DataObject] {
-        return DataContext.instance.groups
-    }
+//    override var dataSource: [DataObject] {
+//        return DataContext.instance.groups
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.dataSource = DataContext.instance.groups
     }
 
     // MARK: - Table view data source
