@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct Response<TItem : Decodable> : Decodable {
+class Response<TItem : Decodable> : Decodable {
     let count: Int
     let items: [TItem]
 
@@ -16,7 +16,7 @@ struct Response<TItem : Decodable> : Decodable {
         case items = "items"
     }
 
-    init(from decoder: Decoder) throws {
+    required init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         count = try! values.decodeIfPresent(Int.self, forKey: .count) ?? 0
         items = try! values.decodeIfPresent([TItem].self, forKey: .items)!

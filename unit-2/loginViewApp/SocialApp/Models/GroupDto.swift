@@ -6,19 +6,21 @@
 //
 
 import Foundation
-struct GroupDto : Decodable, DataObject {
-    var id : Int
-    var name : String
-    let screen_name : String?
-    let is_closed : Int?
-    let type : String?
-    let is_admin : Int?
-    let is_member : Int?
-    let is_advertiser : Int?
-    var mainImage : String
-    let photo_100 : String?
-    let photo_200 : String?
-    var images: [String]?
+import RealmSwift
+
+class GroupDto : Object, Decodable, DataObject {
+    @objc dynamic var id : Int = -1
+    @objc dynamic var name : String = ""
+    @objc dynamic var screen_name : String? = ""
+    @objc dynamic var is_closed : Int = -1
+    @objc dynamic var type : String? = ""
+    @objc dynamic var is_admin : Int = -1
+    @objc dynamic var is_member : Int = -1
+    @objc dynamic var is_advertiser : Int = -1
+    @objc dynamic var mainImage : String = ""
+    @objc dynamic var photo_100 : String? = ""
+    @objc dynamic var photo_200 : String? = ""
+    var images: [String]? = []
 
     enum CodingKeys: String, CodingKey {
 
@@ -34,17 +36,21 @@ struct GroupDto : Decodable, DataObject {
         case photo_100 = "photo_100"
         case photo_200 = "photo_200"
     }
+    
+    override init() {
+        super.init()
+    }
 
-    init(from decoder: Decoder) throws {
+    required init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try! values.decodeIfPresent(Int.self, forKey: .id)!
         name = try! values.decodeIfPresent(String.self, forKey: .name)!
         screen_name = try values.decodeIfPresent(String.self, forKey: .screen_name)
-        is_closed = try values.decodeIfPresent(Int.self, forKey: .is_closed)
+        is_closed = try values.decodeIfPresent(Int.self, forKey: .is_closed) ?? -1
         type = try values.decodeIfPresent(String.self, forKey: .type)
-        is_admin = try values.decodeIfPresent(Int.self, forKey: .is_admin)
-        is_member = try values.decodeIfPresent(Int.self, forKey: .is_member)
-        is_advertiser = try values.decodeIfPresent(Int.self, forKey: .is_advertiser)
+        is_admin = try values.decodeIfPresent(Int.self, forKey: .is_admin) ?? -1
+        is_member = try values.decodeIfPresent(Int.self, forKey: .is_member) ?? -1
+        is_advertiser = try values.decodeIfPresent(Int.self, forKey: .is_advertiser) ?? -1
         mainImage = try! values.decodeIfPresent(String.self, forKey: .photo_50)!
         photo_100 = try values.decodeIfPresent(String.self, forKey: .photo_100)
         photo_200 = try values.decodeIfPresent(String.self, forKey: .photo_200)

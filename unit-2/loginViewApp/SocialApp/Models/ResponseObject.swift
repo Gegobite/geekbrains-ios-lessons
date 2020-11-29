@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct ResponseObject<TItem : Decodable> : Decodable {
+class ResponseObject<TItem : Decodable> : Decodable {
     let response : Response<TItem>?
 
     enum CodingKeys: String, CodingKey {
@@ -14,7 +14,7 @@ struct ResponseObject<TItem : Decodable> : Decodable {
         case response = "response"
     }
 
-    init(from decoder: Decoder) throws {
+    required init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         response = try! values.decodeIfPresent(Response<TItem>.self, forKey: .response)
     }

@@ -8,5 +8,6 @@ target 'SocialApp' do
   # Pods for SocialApp
 pod 'Alamofire', '~> 5.2'
 pod 'Swinject'
+pod 'RealmSwift'
 
 end
