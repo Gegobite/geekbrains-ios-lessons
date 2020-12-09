@@ -6,10 +6,13 @@
 //
 
 import Alamofire
+import RealmSwift
 
 protocol FriendsServiceDelegate {
     func getUserFriends(userId: Int, completion: @escaping (String) -> Void)
     func getByUserIdAsync(userId: Int, completion: @escaping ([FriendDto]?) -> Void)
+    func getByUserIdFromLocal(userId: Int) -> [FriendDto]
+    func addOrUpdate(friends: [FriendDto])
 }
 
 class FriendsService : FriendsServiceDelegate {
@@ -43,7 +46,33 @@ class FriendsService : FriendsServiceDelegate {
         
         client.getFromJson((ResponseObject<FriendDto>).self, path: "friends.get", params: params) { data in
             
-            completion(data?.response?.items ?? nil)
+            let items = data?.response?.items
+            items?.forEach{ $0.userId = userId }
+            completion(items ?? nil)
+        }
+    }
+    
+    func getByUserIdFromLocal(userId: Int) -> [FriendDto] {
+        do {
+            let config = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
+            let realm = try Realm(configuration: config)
+            let friends = realm.objects(FriendDto.self).filter("userId = \(userId)")
+            return Array(friends)
+        } catch  {
+            print(error)
+            return []
+        }
+    }
+    
+    func addOrUpdate(friends: [FriendDto]) {
+        do {
+            let config = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
+            let realm = try Realm(configuration: config)
+            realm.beginWrite()
+            realm.add(friends, update: .all)
+            try realm.commitWrite()
+        } catch {
+            print(error)
         }
     }
 }

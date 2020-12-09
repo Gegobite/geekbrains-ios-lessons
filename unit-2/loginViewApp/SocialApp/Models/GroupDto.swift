@@ -21,6 +21,7 @@ class GroupDto : Object, Decodable, DataObject {
     @objc dynamic var photo_100 : String? = ""
     @objc dynamic var photo_200 : String? = ""
     var images: [String]? = []
+    @objc dynamic var userId: Int = 0
 
     enum CodingKeys: String, CodingKey {
 
@@ -55,5 +56,8 @@ class GroupDto : Object, Decodable, DataObject {
         photo_100 = try values.decodeIfPresent(String.self, forKey: .photo_100)
         photo_200 = try values.decodeIfPresent(String.self, forKey: .photo_200)
     }
-
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }

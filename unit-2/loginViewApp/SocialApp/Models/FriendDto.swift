@@ -13,11 +13,12 @@ class FriendDto : Object, Decodable, DataObject {
     @objc dynamic var mainImage: String = ""
     var images: [String]? = []
     @objc dynamic var first_name : String? = ""
-    @objc dynamic var id : Int = -1
+    @objc dynamic var id : Int = 0
     @objc dynamic var last_name : String? = ""
     @objc dynamic var can_access_closed : Bool = false
     @objc dynamic var is_closed : Bool = false
     @objc dynamic var track_code : String? = ""
+    @objc dynamic var userId: Int = 0
 
     enum CodingKeys: String, CodingKey {
 
@@ -45,5 +46,9 @@ class FriendDto : Object, Decodable, DataObject {
         track_code = try values.decodeIfPresent(String.self, forKey: .track_code)
         name = "\(String(describing: first_name!)) \(String(describing: last_name!))"
         images = nil
+    }
+    
+    override static func primaryKey() -> String? {
+        return "id"
     }
 }

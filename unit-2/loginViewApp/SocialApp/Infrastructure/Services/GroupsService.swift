@@ -6,11 +6,14 @@
 //
 
 import Alamofire
+import RealmSwift
 
 protocol GroupsServiceDelegate {
     func getUserGroups(userId: Int, completion: @escaping (String) -> Void)
     func getGroupsByUserIdAsync(userId: Int, completion: @escaping ([GroupDto]?) -> Void)
     func searchGroups(by substring: String, completion: @escaping (String) -> Void)
+    func getByUserIdFromLocal(userId: Int) -> [GroupDto]
+    func addOrUpdate(groups: [GroupDto])
 }
 
 class GroupsService : GroupsServiceDelegate {
@@ -44,7 +47,9 @@ class GroupsService : GroupsServiceDelegate {
         ]
         
         client.getFromJson(ResponseObject<GroupDto>.self, path: "groups.get", params: params){ data in
-            completion(data?.response?.items ?? nil)
+            let items = data?.response?.items
+            items?.forEach{ $0.userId = userId }
+            completion(items ?? nil)
         }
     }
     
@@ -60,5 +65,27 @@ class GroupsService : GroupsServiceDelegate {
         }
     }
     
+    func getByUserIdFromLocal(userId: Int) -> [GroupDto] {
+        do {
+            let config = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
+            let realm = try Realm(configuration: config)
+            let groups = realm.objects(GroupDto.self).filter("userId = \(userId)")
+            return Array(groups)
+        } catch  {
+            print(error)
+            return []
+        }
+    }
     
+    func addOrUpdate(groups: [GroupDto]) {
+        do {
+            let config = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
+            let realm = try Realm(configuration: config)
+            realm.beginWrite()
+            realm.add(groups, update: .all)
+            try realm.commitWrite()
+        } catch {
+            print(error)
+        }
+    }
 }
