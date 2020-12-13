@@ -27,7 +27,7 @@ class NewsTableViewCell: UITableViewCell {
     }
     
     func setNews(_ news: News){
-        avatarView.image = news.friend.getMainImage()
+//        avatarView.image = news.friend.getMainImage()
         authorLabel.text = news.friend.name
         dateLabel.text = news.createDate.description
         newsImage.image = news.image

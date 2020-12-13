@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FriendsTableViewController: BaseTableViewController {
+class FriendsTableViewController: BaseTableViewController<FriendDto> {
 
     let friendsService = AppDelegate.container.resolve(FriendsServiceDelegate.self)!
     
@@ -20,7 +20,7 @@ class FriendsTableViewController: BaseTableViewController {
                 self.refresh(sender: self)
             }
             else {
-                self.refreshData(data: friends)
+              //  self.refreshData(data: friends)
             }
         }
     }
@@ -31,7 +31,7 @@ class FriendsTableViewController: BaseTableViewController {
             guard let self = self, let friends = friends else { return }
             DispatchQueue.main.async {
                 self.friendsService.addOrUpdate(friends: friends)
-                self.refreshData(data: friends)
+               // self.refreshData(data: friends)
                 
                 self.refreshControl?.endRefreshing()
             }

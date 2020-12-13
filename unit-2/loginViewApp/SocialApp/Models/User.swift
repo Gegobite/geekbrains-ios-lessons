@@ -5,7 +5,7 @@
 //  Created by Игорь Ершов on 07.10.2020.
 //
 
-class User : DataObject {
+class User {
     var id: Int
     var login: String
     var password: String

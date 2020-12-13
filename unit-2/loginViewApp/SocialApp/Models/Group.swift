@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Group : DataObject {
+class Group {
     var id: Int
     var name: String
     var mainImage: String

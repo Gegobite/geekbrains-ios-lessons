@@ -6,28 +6,31 @@
 //
 
 import UIKit
+import RealmSwift
 
-class BaseTableViewController: UITableViewController, UISearchBarDelegate {
+class BaseTableViewController<TEntity : DataObject>: UITableViewController, UISearchBarDelegate {
 
-    var dataSource: [DataObject] = []
-    
-    private var filteredData: [DataObject]!
+    var dataSource: Results<TEntity>?
     private var searchBarWrapperView: UIView!
     private var searchBar: UISearchBar!
     private var dataSourceIndex: [String] {
             get {
                 var index: [String] = []
-                for item in filteredData {
-                    index.append(String(item.name.first!))
+                dataSource?.forEach {
+                    index.append(String($0.name.first!))
                 }
                 return Array(Set(index)).sorted()
+                
             }
         }
+    
+    private var sections: [(index: Int, name: String, items: Results<TEntity>)]?
+    private var tokens: [NotificationToken] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        filteredData = dataSource
+        pairTableAndRealm()
         
         tableView.register(UINib(nibName: "CommonTableViewCell", bundle: nil), forCellReuseIdentifier: "CommonCell")
         
@@ -40,10 +43,45 @@ class BaseTableViewController: UITableViewController, UISearchBarDelegate {
         tableView.tableHeaderView = searchBarWrapperView
     }
     
-    func refreshData(data: [DataObject]){
-        dataSource = data
-        filteredData = dataSource
+    func refreshData(data: [TEntity]){
         tableView.reloadData()
+    }
+    
+    func pairTableAndRealm() {
+        guard let realm = try? Realm() else { return }
+        dataSource = realm.objects(TEntity.self)
+        sections = []
+        tokens = []
+        var index = 0
+        dataSourceIndex.forEach {
+            let items = dataSource!.filter("name BEGINSWITH %@", $0)
+            sections?.append((index, $0, items))
+            index += 1
+        }
+        
+        sections?.forEach{ section in
+            let token = section.items.observe{ [weak self] (changes: RealmCollectionChange) in
+                guard let tableView = self?.tableView else { return }
+                switch changes {
+                case .initial:
+                    tableView.reloadData()
+                case .update(_, let deletions, let insertions, let modifications):
+                    tableView.beginUpdates()
+                    tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: section.index) }),
+                                         with: .automatic)
+                    tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: section.index)}),
+                                         with: .automatic)
+                    tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: section.index) }),
+                                         with: .automatic)
+                    tableView.endUpdates()
+                case .error(let error):
+                    fatalError("\(error)")
+                }
+            }
+            
+            tokens.append(token)
+        }
+
     }
 
     // MARK: - Table view data source
@@ -83,15 +121,17 @@ class BaseTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func getItemsInSection(section: Int) -> [DataObject]{
-        return filteredData.filter {String($0.name.first!) == dataSourceIndex[section]}
+        return dataSource!.filter {String($0.name.first!) == dataSourceIndex[section]}
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filteredData = searchText.isEmpty ? dataSource :
-            dataSource.filter { (item: DataObject) -> Bool in
-                return item.name.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
-            }
-                
-        tableView.reloadData()
+        
+        if (!searchText.isEmpty){
+            dataSource = dataSource?.filter("name CONTAINS[c] %@", searchBar.text!).sorted(byKeyPath: "name", ascending: true)
+            tableView.reloadData()
+        }
+        else{
+            pairTableAndRealm()
+        }
     }
 }

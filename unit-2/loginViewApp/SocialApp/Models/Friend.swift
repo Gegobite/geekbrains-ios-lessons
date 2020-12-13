@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class Friend: DataObject {
+class Friend {
     var id: Int
     var name: String
     var mainImage: String

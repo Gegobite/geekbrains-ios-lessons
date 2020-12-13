@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GroupsTableViewController: BaseTableViewController {
+class GroupsTableViewController: BaseTableViewController<GroupDto> {
     
     let groupsService = AppDelegate.container.resolve(GroupsServiceDelegate.self)!
     
@@ -23,13 +23,7 @@ class GroupsTableViewController: BaseTableViewController {
                 self.refresh(sender: self)
             }
             else {
-                self.refreshData(data: groups)
-            }
-        }
-        groupsService.getGroupsByUserIdAsync(userId: AppSessionManager.currentSession.userId){ [weak self] groups in
-            guard let self = self, let groups = groups else { return }
-            DispatchQueue.main.async {
-                self.refreshData(data: groups)
+               // self.refreshData(data: groups)
             }
         }
     }
@@ -40,7 +34,7 @@ class GroupsTableViewController: BaseTableViewController {
             guard let self = self, let groups = groups else { return }
             DispatchQueue.main.async {
                 self.groupsService.addOrUpdate(groups: groups)
-                self.refreshData(data: groups)
+             //   self.refreshData(data: groups)
                 
                 self.refreshControl?.endRefreshing()
             }

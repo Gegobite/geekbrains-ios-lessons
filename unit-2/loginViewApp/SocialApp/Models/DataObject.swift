@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import RealmSwift
 
-protocol DataObject {
+protocol DataObject : Object {
     var id: Int { get set }
     var name: String { get set }
     var mainImage: String { get set }
