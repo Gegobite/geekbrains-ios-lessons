@@ -7,9 +7,13 @@
 
 import UIKit
 import WebKit
+import FirebaseDatabase
+import FirebaseAuth
 
 class VkAuthViewController: UIViewController {
 
+    private let ref = Database.database().reference(withPath: "users")
+    
     @IBOutlet weak var webView: WKWebView! {
         didSet{
             webView.navigationDelegate = self
@@ -65,6 +69,13 @@ extension VkAuthViewController: WKNavigationDelegate {
         AppSessionManager.currentSession.token = token!
         AppSessionManager.currentSession.userId = Int(userId!) ?? -1
         
+        Auth.auth().signInAnonymously() { (authResult, error) in
+          // ...
+        }
+        
+        let user = FirebaseUser(userId: AppSessionManager.currentSession.userId)
+        let userRef = self.ref.child(String(userId!))
+        userRef.setValue(user.toAnyObject())
         
         decisionHandler(.cancel)
         
