@@ -6,14 +6,33 @@
 //
 
 import UIKit
+import Swinject
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    static let container: Container = {
+        let container = Container()
+        container.register(HttpClient.self) { _ in
+            let client = HttpClient()
+            client.baseUrl = ConnectionSettings.current.apiUrl
+            return client
+        }
+        container.register(FriendsServiceDelegate.self) {
+            r in FriendsService(client: r.resolve(HttpClient.self)!)
+        }
+        container.register(GroupsServiceDelegate.self) {
+            r in GroupsService(client: r.resolve(HttpClient.self)!)
+        }
+        container.register(PhotosServiceDelegate.self) {
+            r in PhotosService(client: r.resolve(HttpClient.self)!)
+        }
+        return container
+    }()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        FirebaseApp.configure()
         return true
     }
 

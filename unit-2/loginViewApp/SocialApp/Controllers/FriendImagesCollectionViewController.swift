@@ -10,27 +10,40 @@ import UIKit
 private let reuseIdentifier = "friendImagesCell"
 
 class FriendImagesCollectionViewController: UICollectionViewController {
-
-    var images: [UIImage] = []
+    
+    let photosService = AppDelegate.container.resolve(PhotosServiceDelegate.self)!
+    var images: [UIImage?] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-//        self.collectionView!.register(FriendImagesCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-//        
+        
         collectionView.delegate = self
         collectionView.dataSource = self
-
-        // Do any additional setup after loading the view.
     }
     
     func setDataObject(_ dataObject: DataObject) {
-        self.images = dataObject.getImages()
         self.title = dataObject.name
+        
+        photosService.getByUserIdAsync(userId: dataObject.id) { [weak self] photos in
+            guard let self = self, let photos = photos else {return}
+            
+            let urls = photos.map { s -> (Sizes) in s.sizes!.filter {$0.type == "q"}.first!}.map {$0.url}
+            let originImages = urls.map { s -> (UIImage?) in
+                let url = NSURL(string: s!)! as URL
+                if let imageData: NSData = NSData(contentsOf: url) {
+                    return UIImage(data: imageData as Data)
+                }
+
+                return nil
+            }
+            .filter { $0 != nil}
+            
+            DispatchQueue.main.async {
+                self.images = originImages
+                self.collectionView.reloadData()
+            }
+        }
+        
     }
 
     // MARK: UICollectionViewDataSource
@@ -51,13 +64,6 @@ class FriendImagesCollectionViewController: UICollectionViewController {
     
         let cellImage = images[indexPath.item];
         
-//        let imageview:UIImageView=UIImageView(frame: CGRect(x: 50, y: 50, width: 150, height: 150));
-//
-//                
-//                imageview.image = cellImage
-//
-//                cell.contentView.addSubview(imageview)
-        
         cell.imageView.image = cellImage
     
         return cell
@@ -76,38 +82,7 @@ class FriendImagesCollectionViewController: UICollectionViewController {
         
         let selectedItem = images[indexPath.item]
         
-        vc.setup(images, selectedImage: selectedItem)
+        vc.setup(images, selectedImage: selectedItem!)
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
 
 }

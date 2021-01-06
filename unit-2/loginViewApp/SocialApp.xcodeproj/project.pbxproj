@@ -3,14 +3,30 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20C9CE7AC1B28EBCE0FCDE78 /* Pods_SocialApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC016A89996A47A0F57264C7 /* Pods_SocialApp.framework */; };
+		272B38E4258AA6E600272B3C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 272B38E3258AA6E500272B3C /* GoogleService-Info.plist */; };
+		272B3909258AAB2B00272B3C /* FirebaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272B3908258AAB2B00272B3C /* FirebaseUser.swift */; };
 		274FFD16254CA19E00389C65 /* PushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FFD15254CA19E00389C65 /* PushAnimator.swift */; };
 		274FFD1B254CA32700389C65 /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FFD1A254CA32700389C65 /* PopAnimator.swift */; };
 		274FFD1E254CA46900389C65 /* FriendsNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FFD1D254CA46900389C65 /* FriendsNavigationViewController.swift */; };
 		274FFD22254CB32E00389C65 /* CustomInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FFD21254CB32E00389C65 /* CustomInteractiveTransition.swift */; };
+		27AF7B80256814DA00E463DF /* AppSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7B7F256814DA00E463DF /* AppSessionManager.swift */; };
+		27AF7B842568190A00E463DF /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7B832568190A00E463DF /* HttpClient.swift */; };
+		27AF7B8F25682E7B00E463DF /* VkAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7B8E25682E7B00E463DF /* VkAuthViewController.swift */; };
+		27AF7B932568323E00E463DF /* FriendsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7B922568323E00E463DF /* FriendsService.swift */; };
+		27AF7B962568337200E463DF /* ConnectionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7B952568337200E463DF /* ConnectionSettings.swift */; };
+		27AF7BA1256AB69800E463DF /* GroupsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7BA0256AB69800E463DF /* GroupsService.swift */; };
+		27AF7BA4256AB98000E463DF /* PhotosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7BA3256AB98000E463DF /* PhotosService.swift */; };
+		27AF7BAD256C465D00E463DF /* CustomSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7BAC256C465D00E463DF /* CustomSession.swift */; };
+		27AF7BB02573D5AC00E463DF /* FriendDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7BAF2573D5AC00E463DF /* FriendDto.swift */; };
+		27AF7BB32573D99100E463DF /* ResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7BB22573D99100E463DF /* ResponseObject.swift */; };
+		27AF7BB62573DA4200E463DF /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7BB52573DA4200E463DF /* Response.swift */; };
+		27AF7BB92573F70200E463DF /* GroupDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7BB82573F70200E463DF /* GroupDto.swift */; };
+		27AF7BBC2573FDF900E463DF /* PhotoDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AF7BBB2573FDF900E463DF /* PhotoDto.swift */; };
 		27B6C45B253634B100DE9A71 /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6C45A253634B100DE9A71 /* CircularImageView.swift */; };
 		27B6C45E2536377C00DE9A71 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6C45D2536377C00DE9A71 /* AvatarView.swift */; };
 		27B6C46225364BD400DE9A71 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B6C46125364BD400DE9A71 /* LikeButton.swift */; };
@@ -49,10 +65,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02A8E0A0A1683A1C7E938049 /* Pods-SocialApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialApp.release.xcconfig"; path = "Target Support Files/Pods-SocialApp/Pods-SocialApp.release.xcconfig"; sourceTree = "<group>"; };
+		272B38E3258AA6E500272B3C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		272B3908258AAB2B00272B3C /* FirebaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUser.swift; sourceTree = "<group>"; };
 		274FFD15254CA19E00389C65 /* PushAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushAnimator.swift; sourceTree = "<group>"; };
 		274FFD1A254CA32700389C65 /* PopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
 		274FFD1D254CA46900389C65 /* FriendsNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsNavigationViewController.swift; sourceTree = "<group>"; };
 		274FFD21254CB32E00389C65 /* CustomInteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInteractiveTransition.swift; sourceTree = "<group>"; };
+		27AF7B7F256814DA00E463DF /* AppSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSessionManager.swift; sourceTree = "<group>"; };
+		27AF7B832568190A00E463DF /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		27AF7B8E25682E7B00E463DF /* VkAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkAuthViewController.swift; sourceTree = "<group>"; };
+		27AF7B922568323E00E463DF /* FriendsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsService.swift; sourceTree = "<group>"; };
+		27AF7B952568337200E463DF /* ConnectionSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionSettings.swift; sourceTree = "<group>"; };
+		27AF7BA0256AB69800E463DF /* GroupsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsService.swift; sourceTree = "<group>"; };
+		27AF7BA3256AB98000E463DF /* PhotosService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosService.swift; sourceTree = "<group>"; };
+		27AF7BAC256C465D00E463DF /* CustomSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSession.swift; sourceTree = "<group>"; };
+		27AF7BAF2573D5AC00E463DF /* FriendDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDto.swift; sourceTree = "<group>"; };
+		27AF7BB22573D99100E463DF /* ResponseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseObject.swift; sourceTree = "<group>"; };
+		27AF7BB52573DA4200E463DF /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		27AF7BB82573F70200E463DF /* GroupDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDto.swift; sourceTree = "<group>"; };
+		27AF7BBB2573FDF900E463DF /* PhotoDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDto.swift; sourceTree = "<group>"; };
 		27B6C45A253634B100DE9A71 /* CircularImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
 		27B6C45D2536377C00DE9A71 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		27B6C46125364BD400DE9A71 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
@@ -90,6 +122,8 @@
 		27BE27C22530FEC60066B296 /* FriendImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendImagesCollectionViewCell.swift; sourceTree = "<group>"; };
 		27BE27C525310A0F0066B296 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		27BE27C825310C380066B296 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
+		361BBB137AF4D33E759906BD /* Pods-SocialApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialApp.debug.xcconfig"; path = "Target Support Files/Pods-SocialApp/Pods-SocialApp.debug.xcconfig"; sourceTree = "<group>"; };
+		AC016A89996A47A0F57264C7 /* Pods_SocialApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,18 +131,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20C9CE7AC1B28EBCE0FCDE78 /* Pods_SocialApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AB45A046EB215D2EA875D1A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC016A89996A47A0F57264C7 /* Pods_SocialApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		274FFD20254CB31B00389C65 /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
 				274FFD21254CB32E00389C65 /* CustomInteractiveTransition.swift */,
 			);
 			path = Transitions;
+			sourceTree = "<group>";
+		};
+		27AF7B822568185C00E463DF /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				27AF7B912568320800E463DF /* Services */,
+				27AF7B832568190A00E463DF /* HttpClient.swift */,
+				27AF7B952568337200E463DF /* ConnectionSettings.swift */,
+				27AF7BAC256C465D00E463DF /* CustomSession.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		27AF7B912568320800E463DF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				27AF7B922568323E00E463DF /* FriendsService.swift */,
+				27AF7BA0256AB69800E463DF /* GroupsService.swift */,
+				27AF7BA3256AB98000E463DF /* PhotosService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		27B6C4592536348700DE9A71 /* Views */ = {
@@ -162,6 +226,7 @@
 				27B6C493253E555D00DE9A71 /* NewsTableViewController.swift */,
 				27B6C4C12544881400DE9A71 /* FriendImagesViewController.swift */,
 				274FFD1D254CA46900389C65 /* FriendsNavigationViewController.swift */,
+				27AF7B8E25682E7B00E463DF /* VkAuthViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -171,6 +236,8 @@
 			children = (
 				27BE278325238EB70066B296 /* SocialApp */,
 				27BE278225238EB70066B296 /* Products */,
+				E649FF9FE652323AFE8F053D /* Pods */,
+				1AB45A046EB215D2EA875D1A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,6 +252,8 @@
 		27BE278325238EB70066B296 /* SocialApp */ = {
 			isa = PBXGroup;
 			children = (
+				272B38E3258AA6E500272B3C /* GoogleService-Info.plist */,
+				27AF7B822568185C00E463DF /* Infrastructure */,
 				274FFD20254CB31B00389C65 /* Transitions */,
 				27B6C48E253E4AD700DE9A71 /* NewsTableViewCell.swift */,
 				27B6C48F253E4AD700DE9A71 /* NewsTableViewCell.xib */,
@@ -206,6 +275,7 @@
 				27B6C496253F6CD500DE9A71 /* GalleryLayout.swift */,
 				27B6C4B0254344D200DE9A71 /* LaunchScreenView.xib */,
 				27B6C4BB2544478E00DE9A71 /* LaunchScreenManager.swift */,
+				27AF7B7F256814DA00E463DF /* AppSessionManager.swift */,
 			);
 			path = SocialApp;
 			sourceTree = "<group>";
@@ -218,6 +288,12 @@
 				27B6C473253E1CB200DE9A71 /* DataObject.swift */,
 				27B6C47B253E28A200DE9A71 /* Friend.swift */,
 				27B6C48B253E49C600DE9A71 /* News.swift */,
+				27AF7BAF2573D5AC00E463DF /* FriendDto.swift */,
+				27AF7BB22573D99100E463DF /* ResponseObject.swift */,
+				27AF7BB52573DA4200E463DF /* Response.swift */,
+				27AF7BB82573F70200E463DF /* GroupDto.swift */,
+				27AF7BBB2573FDF900E463DF /* PhotoDto.swift */,
+				272B3908258AAB2B00272B3C /* FirebaseUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -230,6 +306,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		E649FF9FE652323AFE8F053D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				361BBB137AF4D33E759906BD /* Pods-SocialApp.debug.xcconfig */,
+				02A8E0A0A1683A1C7E938049 /* Pods-SocialApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -237,9 +322,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27BE279525238EB80066B296 /* Build configuration list for PBXNativeTarget "SocialApp" */;
 			buildPhases = (
+				CDF1D1067FB357EC40F911B3 /* [CP] Check Pods Manifest.lock */,
 				27BE277D25238EB70066B296 /* Sources */,
 				27BE277E25238EB70066B296 /* Frameworks */,
 				27BE277F25238EB70066B296 /* Resources */,
+				AD68BB07837896EF76ACCC75 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -292,10 +379,53 @@
 				27BE278E25238EB80066B296 /* Assets.xcassets in Resources */,
 				27BE278C25238EB70066B296 /* Main.storyboard in Resources */,
 				27B6C491253E4AD700DE9A71 /* NewsTableViewCell.xib in Resources */,
+				272B38E4258AA6E600272B3C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AD68BB07837896EF76ACCC75 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SocialApp/Pods-SocialApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SocialApp/Pods-SocialApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SocialApp/Pods-SocialApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDF1D1067FB357EC40F911B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SocialApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		27BE277D25238EB70066B296 /* Sources */ = {
@@ -306,36 +436,50 @@
 				27B6C482253E301D00DE9A71 /* BaseTableViewController.swift in Sources */,
 				27B6C4BC2544478E00DE9A71 /* LaunchScreenManager.swift in Sources */,
 				27BE27A52527F4110066B296 /* TabViewController.swift in Sources */,
+				27AF7BB62573DA4200E463DF /* Response.swift in Sources */,
 				27B6C4B92544450E00DE9A71 /* DotsAnimation.swift in Sources */,
 				27B6C4BF2544870400DE9A71 /* ImageViewExtensions.swift in Sources */,
 				27BE279B252396BF0066B296 /* LoginViewController.swift in Sources */,
+				27AF7BAD256C465D00E463DF /* CustomSession.swift in Sources */,
 				274FFD16254CA19E00389C65 /* PushAnimator.swift in Sources */,
 				27B6C49D25433D6D00DE9A71 /* DotsControll.swift in Sources */,
 				27B6C4C22544881400DE9A71 /* FriendImagesViewController.swift in Sources */,
 				27B6C474253E1CB200DE9A71 /* DataObject.swift in Sources */,
+				27AF7B842568190A00E463DF /* HttpClient.swift in Sources */,
 				27BE27C925310C380066B296 /* GroupsTableViewController.swift in Sources */,
 				274FFD22254CB32E00389C65 /* CustomInteractiveTransition.swift in Sources */,
+				27AF7B80256814DA00E463DF /* AppSessionManager.swift in Sources */,
 				27B6C497253F6CD500DE9A71 /* GalleryLayout.swift in Sources */,
 				27B6C48C253E49C600DE9A71 /* News.swift in Sources */,
+				27AF7BB92573F70200E463DF /* GroupDto.swift in Sources */,
 				27B6C477253E1F6A00DE9A71 /* DataContext.swift in Sources */,
 				27B6C490253E4AD700DE9A71 /* NewsTableViewCell.swift in Sources */,
 				27BE278525238EB70066B296 /* AppDelegate.swift in Sources */,
+				27AF7BBC2573FDF900E463DF /* PhotoDto.swift in Sources */,
 				27BE27AF252D2C690066B296 /* User.swift in Sources */,
 				27B6C45B253634B100DE9A71 /* CircularImageView.swift in Sources */,
 				27BE27C32530FEC60066B296 /* FriendImagesCollectionViewCell.swift in Sources */,
 				27BE27BA2530F5700066B296 /* FriendsTableViewController.swift in Sources */,
 				27B6C46225364BD400DE9A71 /* LikeButton.swift in Sources */,
+				272B3909258AAB2B00272B3C /* FirebaseUser.swift in Sources */,
 				274FFD1B254CA32700389C65 /* PopAnimator.swift in Sources */,
 				274FFD1E254CA46900389C65 /* FriendsNavigationViewController.swift in Sources */,
 				27BE27C02530FE470066B296 /* FriendImagesCollectionViewController.swift in Sources */,
+				27AF7BB02573D5AC00E463DF /* FriendDto.swift in Sources */,
 				27B6C470253E190900DE9A71 /* CommonTableViewCell.swift in Sources */,
+				27AF7B962568337200E463DF /* ConnectionSettings.swift in Sources */,
 				27B6C45E2536377C00DE9A71 /* AvatarView.swift in Sources */,
+				27AF7BA1256AB69800E463DF /* GroupsService.swift in Sources */,
+				27AF7BA4256AB98000E463DF /* PhotosService.swift in Sources */,
+				27AF7B8F25682E7B00E463DF /* VkAuthViewController.swift in Sources */,
 				27B6C486253E34C300DE9A71 /* SearchGroupsTableViewController.swift in Sources */,
 				27BE278725238EB70066B296 /* SceneDelegate.swift in Sources */,
 				27B6C494253E555D00DE9A71 /* NewsTableViewController.swift in Sources */,
 				27B6C46A25365B4E00DE9A71 /* LikeControl.swift in Sources */,
+				27AF7BB32573D99100E463DF /* ResponseObject.swift in Sources */,
 				27B6C46725364D3900DE9A71 /* BezierExtensions.swift in Sources */,
 				27B6C47C253E28A200DE9A71 /* Friend.swift in Sources */,
+				27AF7B932568323E00E463DF /* FriendsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +615,7 @@
 		};
 		27BE279625238EB80066B296 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 361BBB137AF4D33E759906BD /* Pods-SocialApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -489,6 +634,7 @@
 		};
 		27BE279725238EB80066B296 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02A8E0A0A1683A1C7E938049 /* Pods-SocialApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
