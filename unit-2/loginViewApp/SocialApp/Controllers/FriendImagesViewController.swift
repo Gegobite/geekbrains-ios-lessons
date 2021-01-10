@@ -9,13 +9,13 @@ import UIKit
 
 class FriendImagesViewController: UIViewController {
 
-    var images: [UIImage] = []
+    var images: [UIImage?] = []
     var currentImage = 0
     var imageView = UIImageView()
     let slidingImageView = UIImageView()
     var interactiveAnimator: UIViewPropertyAnimator!
     
-    func setup(_ images: [UIImage], selectedImage: UIImage){
+    func setup(_ images: [UIImage?], selectedImage: UIImage){
         self.images = images
         currentImage = self.images.firstIndex(of: selectedImage) ?? 0
         slidingImageView.image = images[currentImage]

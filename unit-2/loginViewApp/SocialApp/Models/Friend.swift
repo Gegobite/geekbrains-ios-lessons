@@ -6,7 +6,8 @@
 //
 
 import Foundation
-class Friend: DataObject {
+class Friend {
+    var id: Int
     var name: String
     var mainImage: String
     var images: [String]?
@@ -15,6 +16,7 @@ class Friend: DataObject {
     
     init(name: String, mainImage: String, images: [String]? = nil,
          friends: [User]? = nil, groups: [Group]? = nil) {
+        self.id = 1
         self.name = name
         self.mainImage = mainImage
         self.images = images
