@@ -14,6 +14,7 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var newsImage: UIImageView!
     @IBOutlet weak var newsTextLabel: UILabel!
+    @IBOutlet weak var likeControl: LikeControl!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,5 +33,15 @@ class NewsTableViewCell: UITableViewCell {
         dateLabel.text = news.createDate.description
         newsImage.image = news.image
         newsTextLabel.text = news.text
+    }
+    
+    func setNews(_ news: NewsObject){
+        avatarView.image = news.authorImage
+        authorLabel.text = news.author
+        dateLabel.text = news.createDate.description
+        //newsImage.image = news.
+        newsTextLabel.text = news.text
+        likeControl.updateLikesCount(likes: news.likesCount)
+        likeControl.updateLikeState(liked: news.isLiked)
     }
 }

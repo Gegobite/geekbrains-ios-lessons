@@ -8,15 +8,24 @@
 import UIKit
 
 class NewsTableViewController: UITableViewController {
-
+    
+    let newsService = AppDelegate.container.resolve(NewsServiceDelegate.self)!
+    
     var dataSource: [News] = DataContext.instance.news
+    
+    var news: [NewsObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.refreshControl?.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
 
-        tableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
+        tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
 
+        newsService.getNewsAsync(){ [weak self] news in
+            guard let self = self, let news = news else { return }
+            self.news = news.items?.map { NewsObject.fromNewsResponse(response: news, item: $0) } ?? []
+            self.tableView.reloadData()
+        }
     }
 
     @objc func refresh(sender:AnyObject)
@@ -34,14 +43,14 @@ class NewsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return dataSource.count
+        return news.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
 
-        cell.setNews(dataSource[indexPath.row])
+        cell.setNews(news[indexPath.row])
 
         return cell
     }

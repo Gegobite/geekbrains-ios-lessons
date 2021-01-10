@@ -11,8 +11,8 @@ import UIKit
   private var stackView: UIStackView!
   private var likeButton = LikeButton()
   private let likesLabel = UILabel()
-  private var likesCount: Int = 0
-  private var liked: Bool = false
+  public var likesCount: Int = 0
+  public var liked: Bool = false
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -59,6 +59,11 @@ import UIKit
     likesCount = likes
     likesLabel.text = likesCount > 0 ? "\(likesCount)" : ""
   }
+    
+    func updateLikeState(liked: Bool){
+        self.liked = liked
+        self.likeButton.isLiked = liked
+    }
   
   func like() {
     if !liked {

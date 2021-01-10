@@ -28,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         container.register(PhotosServiceDelegate.self) {
             r in PhotosService(client: r.resolve(HttpClient.self)!)
         }
+        container.register(NewsServiceDelegate.self) {
+            r in NewsService(client: r.resolve(HttpClient.self)!)
+        }
         return container
     }()
 

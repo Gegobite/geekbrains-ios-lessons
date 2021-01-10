@@ -15,7 +15,7 @@ class ConnectionSettings {
     
     private init(){
         clientId = "7670661"
-        clientScope = "262150"
+        clientScope = "270342"
         apiVersion = "5.126"
         apiUrl = "https://api.vk.com/method/"
     }
